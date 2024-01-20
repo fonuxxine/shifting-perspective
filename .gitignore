@@ -74,3 +74,5 @@ crashlytics-build.properties
 
 # Rider IDE
 .idea
+
+/ProjectSettings/
