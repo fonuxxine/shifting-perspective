@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public float interactionDistance = 1f; // distance within which interaction can occur
+    public float interactionDistance = 0.5f; // distance within which interaction can occur
     
     private Transform _player; // player character's transform
     private Transform _npc; // NPC's transform
