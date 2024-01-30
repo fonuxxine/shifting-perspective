@@ -120,11 +120,6 @@ public class rotate : MonoBehaviour
 
     private void UpdateWallTransparency()
     {
-        float duration = 0.6f;
-        Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
-        Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
-        float timePassed = 0f;
-        while (timePassed < duration)
         GameObject newFacingWall = DetermineFacingWall();
         if (currentFacingWall != newFacingWall)
         {
@@ -147,7 +142,6 @@ public class rotate : MonoBehaviour
     private GameObject DetermineFacingWall()
     {
         Vector3 forward = objectTransform.forward;
-
         if (Mathf.Abs(forward.z) > Mathf.Abs(forward.x))
         {
             // Facing North or South
