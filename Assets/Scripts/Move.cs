@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    public float movementModifier = 1f; // multiplied with the base movement speed for times when it must be adjusted
+    
     private float _userHorizontalInput;
     private const float ScaleMovement = 0.005f;
 
@@ -25,6 +27,6 @@ public class Move : MonoBehaviour
         
         _userRot = new Vector3(_userRotInput, 0, _userHorizontalInput);
         
-        playerTransform.position += _userRot * ScaleMovement;
+        playerTransform.position += _userRot * (ScaleMovement * movementModifier);
     }
 }
