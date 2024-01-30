@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     private float _userHorizontalInput;
-    private const float ScaleMovement = 0.1f;
+    private const float ScaleMovement = 0.005f;
 
     private Transform playerTransform;
     
