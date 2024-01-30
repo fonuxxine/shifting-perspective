@@ -11,16 +11,66 @@ public class rotate : MonoBehaviour
     private float currentYAngle = 0f;
     private float currentXAngle = 0f;
     private bool rotationReset = true;
+
+     // Variables for wall transparency...
+    public GameObject wall0, wall1, wall2, wall3;
+    private GameObject currentFacingWall = null;
+    private Material originalMaterial;
+    public Material transparentMaterial;
     
     
     // Start is called before the first frame update
     void Start()
     {
         objectTransform = gameObject.GetComponent<Transform>();
+
+        originalMaterial = DetermineFacingWall().GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
     void Update()
+    {
+        HandleRotationInput();
+        
+        UpdateWallTransparency();
+    }
+
+    IEnumerator RotateHori(float angle)
+    {
+        float duration = 1f;
+        Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
+        Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
+        float timePassed = 0f;
+        while (timePassed < duration)
+        {
+            rotationReset = false;
+            objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
+            timePassed += Time.deltaTime;
+            yield return null;
+        }
+        currentYAngle += angle;
+        objectTransform.rotation = endRotation; // Ensure the final rotation is set
+    }
+    
+    IEnumerator RotateVerti(float angle)
+    {
+        float duration = 1f;
+        Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
+        Quaternion endRotation = Quaternion.Euler(currentXAngle + angle, currentYAngle, 0);
+        float timePassed = 0f;
+        while (timePassed < duration)
+        {
+            rotationReset = false;
+            objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
+            timePassed += Time.deltaTime;
+            yield return null;
+        }
+        currentXAngle += angle;
+        objectTransform.rotation = endRotation; // Ensure the final rotation is set
+    }
+
+
+     private void HandleRotationInput()
     {
         if (rotationReset)
         {
@@ -68,37 +118,57 @@ public class rotate : MonoBehaviour
         }
     }
 
-    IEnumerator RotateHori(float angle)
+    private void UpdateWallTransparency()
     {
         float duration = 0.6f;
         Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
         Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
         float timePassed = 0f;
         while (timePassed < duration)
+        GameObject newFacingWall = DetermineFacingWall();
+        if (currentFacingWall != newFacingWall)
         {
-            rotationReset = false;
-            objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
-            timePassed += Time.deltaTime;
-            yield return null;
+            // Revert the old wall to the original material
+            if (currentFacingWall != null)
+            {
+                SetWallMaterial(currentFacingWall, originalMaterial);
+            }
+
+            // Update originalMaterial to the new wall's material before making it transparent
+            originalMaterial = newFacingWall.GetComponent<Renderer>().material;
+
+            // Make the new facing wall transparent
+            SetWallMaterial(newFacingWall, transparentMaterial);
+
+            currentFacingWall = newFacingWall;
         }
-        currentYAngle += angle;
-        objectTransform.rotation = endRotation; // Ensure the final rotation is set
     }
-    
-    IEnumerator RotateVerti(float angle)
+
+    private GameObject DetermineFacingWall()
     {
-        float duration = 1f;
-        Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
-        Quaternion endRotation = Quaternion.Euler(currentXAngle + angle, currentYAngle, 0);
-        float timePassed = 0f;
-        while (timePassed < duration)
+        Vector3 forward = objectTransform.forward;
+
+        if (Mathf.Abs(forward.z) > Mathf.Abs(forward.x))
         {
-            rotationReset = false;
-            objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
-            timePassed += Time.deltaTime;
-            yield return null;
+            // Facing North or South
+            return forward.z > 0 ? wall0 : wall2;
         }
-        currentXAngle += angle;
-        objectTransform.rotation = endRotation; // Ensure the final rotation is set
+        else
+        {
+            // Facing East or West
+            return forward.x > 0 ? wall3 : wall1;
+        }
+    }
+
+    private void SetWallMaterial(GameObject wall, Material material)
+    {
+        if (wall != null)
+        {
+            Renderer wallRenderer = wall.GetComponent<Renderer>();
+            if (wallRenderer != null)
+            {
+                wallRenderer.material = material;
+            }
+        }
     }
 }
