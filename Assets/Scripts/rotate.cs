@@ -70,7 +70,7 @@ public class rotate : MonoBehaviour
 
     IEnumerator RotateHori(float angle)
     {
-        float duration = 1f;
+        float duration = 0.6f;
         Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
         Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
         float timePassed = 0f;

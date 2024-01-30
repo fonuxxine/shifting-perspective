@@ -52,7 +52,7 @@ public class rotateExt : MonoBehaviour
 
     IEnumerator Rotate(float angle)
     {
-        float duration = 1f;
+        float duration = 0.6f;
         Quaternion startRotation = Quaternion.Euler(0, currentYAngle, 0);
         Quaternion endRotation = Quaternion.Euler(0, currentYAngle + angle, 0);
         float timePassed = 0f;
