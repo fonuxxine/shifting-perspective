@@ -220,6 +220,7 @@ Transform:
   - {fileID: 8613973425291833427}
   - {fileID: 1016678468}
   - {fileID: 1215258172101767640}
+  - {fileID: 1693756226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &604834515
@@ -515,6 +516,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1693756225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 604834514}
+    m_Modifications:
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.8319998
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655892839217848085, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c97563c0902b5543aaac6697075b94f, type: 2}
+    - target: {fileID: 4149633411503803466, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: interactionDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027256198335568419, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_text
+      value: "Arrow keys to \nshift perspective!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870525018617713543, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_Name
+      value: ArrowTutorialNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388472800383066570, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 10.49
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2244698252745725813, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+--- !u!4 &1693756226 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 114949056414479075, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
+  m_PrefabInstance: {fileID: 1693756225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1730618403
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7870525018617713543, guid: 3e57f861fc149c747a8796865b7d607c, type: 3}
       propertyPath: m_Name
-      value: TutorialNPC
+      value: WASDTutorialNPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
