@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuLogic : MonoBehaviour
+public class PauseMenuLogic : MonoBehaviour
 {
     private bool paused;
     public GameObject menu;
