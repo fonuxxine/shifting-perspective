@@ -35,6 +35,12 @@ public class SceneTransition : MonoBehaviour
         // show ENTER KEY image if player is in range
         SetEnterKeyImageActive(_isInRange);
 
+        // make the Enter Key image face the camera
+        if (_hasEnterPrompt && _isInRange)
+        {
+            _enterKeyImage.transform.LookAt(Camera.main.transform.position);
+        }
+
         // check if player is in range and presses Enter key, if so load scene
         if (_isInRange && Input.GetKeyDown(KeyCode.Return))
         {
