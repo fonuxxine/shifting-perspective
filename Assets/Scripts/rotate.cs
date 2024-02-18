@@ -7,6 +7,7 @@ public class rotate : MonoBehaviour
 {
     public float _userRotateYInput;
     public float _userRotateXInput;
+    public float rotateX = 0f;
     private Transform objectTransform;
     private float currentYAngle = 0f;
     private float currentXAngle = 0f;
@@ -73,6 +74,7 @@ public class rotate : MonoBehaviour
             yield return null;
         }
         currentXAngle += angle;
+        rotateX = 0f;
         objectTransform.rotation = endRotation; // Ensure the final rotation is set
     }
 
@@ -116,10 +118,12 @@ public class rotate : MonoBehaviour
             } else if (_userRotateXInput == 1)
             {
                 currentXAngle += 10f;
+                rotateX = 90f;
                 StartCoroutine(RotateVerti(80f));
             } else if (_userRotateXInput == -1)
             { 
                 currentXAngle -= 10f;
+                rotateX = -90f;
                 StartCoroutine(RotateVerti(-80f));
             }
         }

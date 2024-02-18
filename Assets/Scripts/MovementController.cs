@@ -29,6 +29,7 @@ public class MovementController : MonoBehaviour
     private float _groundedGravity = -1f;
     private rotate rotateScript;
     public string parentGameObjectName;
+    private 
     
     Collider _playerCollider;
 
@@ -194,6 +195,18 @@ public class MovementController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(currDirection, targetDirection, _rotationFactor * Time.deltaTime);
         }
     }
+
+    void handleRotateLevel()
+    {
+        Quaternion currDirection = transform.rotation;
+        
+        float rotateX = (rotateScript != null) ? rotateScript.rotateX : 0f;
+        Quaternion targetDirection = Quaternion.Euler(
+            currDirection.eulerAngles.x + 2*rotateX,
+            currDirection.eulerAngles.y, 
+            currDirection.eulerAngles.z);
+        transform.rotation = Quaternion.Slerp(currDirection, targetDirection, _rotationFactor * Time.deltaTime);
+    }
     
     // Update is called once per frame
     void Update()
@@ -211,6 +224,7 @@ public class MovementController : MonoBehaviour
         }
         else
         {
+            //handleRotateLevel();
             _animator.enabled = false;
         }
     }
