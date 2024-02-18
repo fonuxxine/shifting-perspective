@@ -47,8 +47,6 @@ public class MovementController : MonoBehaviour
         _playerInput.CharacterControls.Jump.canceled += OnJumpInput;
         
         _playerCollider = GetComponent<Collider>();
-        
-        JumpVariables();
     }
 
     void JumpVariables()
@@ -61,8 +59,8 @@ public class MovementController : MonoBehaviour
     void OnMovementInput(InputAction.CallbackContext context)
     {
         _currMovementInput = context.ReadValue<Vector2>();
-        _currMovement.x = _currMovementInput.x;
-        _currMovement.z = _currMovementInput.y;
+        _currMovement.x = _currMovementInput.x * _moveFactor;
+        _currMovement.z = _currMovementInput.y * _moveFactor;
         _isMovementPressed = _currMovementInput.x != 0 | _currMovementInput.y != 0;
     }
     
@@ -196,9 +194,10 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        JumpVariables();
         handleAnimation();
         handleRotation();
-        _characterController.Move(_currMovement * Time.deltaTime * _moveFactor);
+        _characterController.Move(_currMovement * Time.deltaTime);
         HandleGravity();
         HandleJump();
     }

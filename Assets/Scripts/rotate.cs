@@ -12,11 +12,11 @@ public class rotate : MonoBehaviour
     private float currentXAngle = 0f;
     private bool rotationReset = true;
 
-     // Variables for wall transparency...
-    public GameObject wall0, wall1, wall2, wall3;
-    private GameObject currentFacingWall = null;
-    private Material originalMaterial;
-    public Material transparentMaterial;
+    //  // Variables for wall transparency...
+    // public GameObject wall0, wall1, wall2, wall3;
+    // private GameObject currentFacingWall = null;
+    // private Material originalMaterial;
+    // public Material transparentMaterial;
     
     
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class rotate : MonoBehaviour
     {
         objectTransform = gameObject.GetComponent<Transform>();
 
-        originalMaterial = DetermineFacingWall().GetComponent<Renderer>().material;
+        // originalMaterial = DetermineFacingWall().GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class rotate : MonoBehaviour
     {
         HandleRotationInput();
         
-        UpdateWallTransparency();
+        // UpdateWallTransparency();
     }
 
     IEnumerator RotateHori(float angle)
@@ -117,52 +117,52 @@ public class rotate : MonoBehaviour
             }
         }
     }
-
-    private void UpdateWallTransparency()
-    {
-        GameObject newFacingWall = DetermineFacingWall();
-        if (currentFacingWall != newFacingWall)
-        {
-            // Revert the old wall to the original material
-            if (currentFacingWall != null)
-            {
-                SetWallMaterial(currentFacingWall, originalMaterial);
-            }
-
-            // Update originalMaterial to the new wall's material before making it transparent
-            originalMaterial = newFacingWall.GetComponent<Renderer>().material;
-
-            // Make the new facing wall transparent
-            SetWallMaterial(newFacingWall, transparentMaterial);
-
-            currentFacingWall = newFacingWall;
-        }
-    }
-
-    private GameObject DetermineFacingWall()
-    {
-        Vector3 forward = objectTransform.forward;
-        if (Mathf.Abs(forward.z) > Mathf.Abs(forward.x))
-        {
-            // Facing North or South
-            return forward.z > 0 ? wall0 : wall2;
-        }
-        else
-        {
-            // Facing East or West
-            return forward.x > 0 ? wall3 : wall1;
-        }
-    }
-
-    private void SetWallMaterial(GameObject wall, Material material)
-    {
-        if (wall != null)
-        {
-            Renderer wallRenderer = wall.GetComponent<Renderer>();
-            if (wallRenderer != null)
-            {
-                wallRenderer.material = material;
-            }
-        }
-    }
+    //
+    // private void UpdateWallTransparency()
+    // {
+    //     GameObject newFacingWall = DetermineFacingWall();
+    //     if (currentFacingWall != newFacingWall)
+    //     {
+    //         // Revert the old wall to the original material
+    //         if (currentFacingWall != null)
+    //         {
+    //             SetWallMaterial(currentFacingWall, originalMaterial);
+    //         }
+    //
+    //         // Update originalMaterial to the new wall's material before making it transparent
+    //         originalMaterial = newFacingWall.GetComponent<Renderer>().material;
+    //
+    //         // Make the new facing wall transparent
+    //         SetWallMaterial(newFacingWall, transparentMaterial);
+    //
+    //         currentFacingWall = newFacingWall;
+    //     }
+    // }
+    //
+    // private GameObject DetermineFacingWall()
+    // {
+    //     Vector3 forward = objectTransform.forward;
+    //     if (Mathf.Abs(forward.z) > Mathf.Abs(forward.x))
+    //     {
+    //         // Facing North or South
+    //         return forward.z > 0 ? wall0 : wall2;
+    //     }
+    //     else
+    //     {
+    //         // Facing East or West
+    //         return forward.x > 0 ? wall3 : wall1;
+    //     }
+    // }
+    //
+    // private void SetWallMaterial(GameObject wall, Material material)
+    // {
+    //     if (wall != null)
+    //     {
+    //         Renderer wallRenderer = wall.GetComponent<Renderer>();
+    //         if (wallRenderer != null)
+    //         {
+    //             wallRenderer.material = material;
+    //         }
+    //     }
+    // }
 }
