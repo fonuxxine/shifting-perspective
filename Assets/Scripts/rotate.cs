@@ -9,8 +9,8 @@ public class rotate : MonoBehaviour
     public float _userRotateXInput;
     public float rotateX = 0f;
     private Transform objectTransform;
-    private float currentYAngle = 0f;
-    private float currentXAngle = 0f;
+    private float currentYAngle;
+    private float currentXAngle;
     private bool rotationReset = true;
     public bool rotating = false;
 
@@ -25,6 +25,8 @@ public class rotate : MonoBehaviour
     void Start()
     {
         objectTransform = gameObject.GetComponent<Transform>();
+        currentYAngle = objectTransform.rotation.eulerAngles.y;
+        currentXAngle = objectTransform.rotation.eulerAngles.x;
         // originalMaterial = DetermineFacingWall().GetComponent<Renderer>().material;
     }
 
