@@ -12,7 +12,7 @@ public class CheckpointHit : MonoBehaviour
     public GameObject respawnPoint;
 
     // Radius to detect the player
-    public float detectionRadius = 2f;
+    public float detectionRadius = 3f;
 
     // Variable to track the current checkpoint number
     private int currentCheckpoint = 0;

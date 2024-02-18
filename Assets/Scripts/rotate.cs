@@ -128,6 +128,15 @@ public class rotate : MonoBehaviour
             }
         }
     }
+
+    public void ResetRotation()
+    {
+        // reset rotation angles to 0
+        currentXAngle = 0f;
+        currentYAngle = 0f;
+        objectTransform.rotation = Quaternion.identity;
+        rotationReset = true;
+    }
     //
     // private void UpdateWallTransparency()
     // {

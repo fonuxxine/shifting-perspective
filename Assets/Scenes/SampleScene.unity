@@ -979,7 +979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681587910}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14952911, y: 0.000000014733634, z: -0.0000000022281577, w: 0.9887573}
+  m_LocalRotation: {x: 0.14952911, y: 0.000000014733633, z: -0.0000000022281577, w: 0.9887573}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1323,7 +1323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745641460}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20628479, y: -0.000000008418152, z: 0.0000000017747076, w: 0.978492}
+  m_LocalRotation: {x: 0.20628479, y: -0.000000008418154, z: 0.0000000017747079, w: 0.978492}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2179,7 +2179,7 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: a58f6b656677781478e9c25f0dba6644, type: 2}
   yellowMaterial: {fileID: 2100000, guid: 201c2fc6a6ff362429ff3c3054eb3166, type: 2}
   respawnPoint: {fileID: 836958310}
-  detectionRadius: 2
+  detectionRadius: 3
 --- !u!1 &1109848686 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1413565128477885658, guid: d90b6bb1e0001493f915792407fb84b7, type: 3}
@@ -4014,6 +4014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userRotateYInput: 0
   _userRotateXInput: 0
+  rotateX: 0
   rotating: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
