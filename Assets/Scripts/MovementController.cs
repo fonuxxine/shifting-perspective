@@ -27,11 +27,10 @@ public class MovementController : MonoBehaviour
     
     private float _gravity = -9.8f;
     private float _groundedGravity = -1f;
-    
-    
+    private rotate rotateScript;
+    public string parentGameObjectName;
     
     Collider _playerCollider;
-    
 
     private void Awake()
     {
@@ -42,11 +41,17 @@ public class MovementController : MonoBehaviour
         _playerInput.CharacterControls.Move.started += OnMovementInput;
         _playerInput.CharacterControls.Move.canceled += OnMovementInput;
         _playerInput.CharacterControls.Move.performed += OnMovementInput;
-        
         _playerInput.CharacterControls.Jump.started += OnJumpInput;
         _playerInput.CharacterControls.Jump.canceled += OnJumpInput;
-        
         _playerCollider = GetComponent<Collider>();
+        if (!string.IsNullOrEmpty(parentGameObjectName))
+        {
+            rotateScript = GameObject.Find(parentGameObjectName).GetComponent<rotate>();
+        }
+        else
+        {
+            Debug.LogError("Please assign the parent GameObject's name in the Unity Inspector.");
+        }
     }
 
     void JumpVariables()
@@ -86,7 +91,6 @@ public class MovementController : MonoBehaviour
     {
         bool isFalling = _currMovement.y <= 0.0f || !_isJumpPressed;
         float fallMult = 2.0f;
-        
         if (_characterController.isGrounded)
         {
             _currMovement.y = _groundedGravity;
@@ -194,19 +198,28 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        JumpVariables();
-        handleAnimation();
-        handleRotation();
-        _characterController.Move(_currMovement * Time.deltaTime);
-        HandleGravity();
-        HandleJump();
+        bool isRotating = (rotateScript != null) ? rotateScript.rotating : false;
+        if (!isRotating)
+        {
+            _animator.enabled = true;
+            JumpVariables();
+            handleAnimation();
+            handleRotation();
+            HandleGravity();
+            HandleJump();
+            _characterController.Move(_currMovement * Time.deltaTime);
+        }
+        else
+        {
+            _animator.enabled = false;
+        }
     }
 
     private void OnEnable()
     {
         _playerInput.CharacterControls.Enable();
     }
-
+    
     private void OnDisable()
     {
         _playerInput.CharacterControls.Disable();

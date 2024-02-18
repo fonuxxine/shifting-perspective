@@ -11,6 +11,7 @@ public class rotate : MonoBehaviour
     private float currentYAngle = 0f;
     private float currentXAngle = 0f;
     private bool rotationReset = true;
+    public bool rotating = false;
 
     //  // Variables for wall transparency...
     // public GameObject wall0, wall1, wall2, wall3;
@@ -23,13 +24,19 @@ public class rotate : MonoBehaviour
     void Start()
     {
         objectTransform = gameObject.GetComponent<Transform>();
-
         // originalMaterial = DetermineFacingWall().GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_userRotateYInput != 0 || _userRotateXInput != 0 || !rotationReset) 
+        {
+            rotating = true;
+        } else
+        {
+            rotating = false;
+        }
         HandleRotationInput();
         
         // UpdateWallTransparency();
