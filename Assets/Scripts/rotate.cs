@@ -13,6 +13,7 @@ public class rotate : MonoBehaviour
     private float currentXAngle;
     private bool rotationReset = true;
     public bool rotating = false;
+    public bool stationaryPlatform = true;
 
     //  // Variables for wall transparency...
     // public GameObject wall0, wall1, wall2, wall3;
@@ -70,6 +71,7 @@ public class rotate : MonoBehaviour
         float timePassed = 0f;
         while (timePassed < duration)
         {
+            stationaryPlatform = false;
             rotationReset = false;
             objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
             timePassed += Time.deltaTime;
@@ -77,6 +79,7 @@ public class rotate : MonoBehaviour
         }
         currentXAngle += angle;
         rotateX = 0f;
+        stationaryPlatform = true;
         objectTransform.rotation = endRotation; // Ensure the final rotation is set
     }
 
@@ -114,6 +117,7 @@ public class rotate : MonoBehaviour
             }
         } else if (_userRotateXInput != 0)
         {
+            stationaryPlatform = false;
             if (Math.Abs(_userRotateXInput) < 1)
             {
                 objectTransform.rotation = Quaternion.Euler(currentXAngle + _userRotateXInput * 10f, currentYAngle, 0);
@@ -129,6 +133,10 @@ public class rotate : MonoBehaviour
                 StartCoroutine(RotateVerti(-80f));
             }
         }
+        else
+        {
+            stationaryPlatform = true;
+        }
     }
 
     public void ResetRotation()
@@ -139,7 +147,7 @@ public class rotate : MonoBehaviour
         objectTransform.rotation = Quaternion.identity;
         rotationReset = true;
     }
-    //
+    
     // private void UpdateWallTransparency()
     // {
     //     GameObject newFacingWall = DetermineFacingWall();
