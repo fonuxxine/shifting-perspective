@@ -11,6 +11,7 @@ public class rotate : MonoBehaviour
     private Transform objectTransform;
     private float currentYAngle;
     private float currentXAngle;
+    private Quaternion baseAngles;
     private bool rotationReset = true;
     public bool rotating = false;
 
@@ -27,6 +28,7 @@ public class rotate : MonoBehaviour
         objectTransform = gameObject.GetComponent<Transform>();
         currentYAngle = objectTransform.rotation.eulerAngles.y;
         currentXAngle = objectTransform.rotation.eulerAngles.x;
+        baseAngles = objectTransform.rotation;
         // originalMaterial = DetermineFacingWall().GetComponent<Renderer>().material;
     }
 
@@ -131,12 +133,18 @@ public class rotate : MonoBehaviour
         }
     }
 
+    // update the level used as the default/base angle for this portion of the level
+    public void UpdateBaseAngles(Quaternion angles)
+    {
+        baseAngles = angles;
+    }
+
+    // reset the rotation of the level to the base rotation for this portion of the stage
     public void ResetRotation()
     {
-        // reset rotation angles to 0
-        currentXAngle = 0f;
-        currentYAngle = 0f;
-        objectTransform.rotation = Quaternion.identity;
+        currentXAngle = baseAngles.eulerAngles.x;
+        currentYAngle = baseAngles.eulerAngles.y;
+        objectTransform.rotation = baseAngles;
         rotationReset = true;
     }
     //

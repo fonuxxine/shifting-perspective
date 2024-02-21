@@ -52,6 +52,10 @@ public class CheckpointHit : MonoBehaviour
 
                         // move the RespawnPoint to the location of the child "RespawnPlaceholder" under the checkpoint
                         MoveRespawnPoint(hitCollider.gameObject.transform);
+
+                        // update the base rotation of the level (for re-rotation after respawn)
+                        rotate rotationScript = GetComponentInParent<rotate>();
+                        rotationScript.UpdateBaseAngles(respawnPoint.transform.rotation);
                     }
                     else if (checkpointNumber < currentCheckpoint)
                     {
