@@ -29,6 +29,8 @@ public class MovementController : MonoBehaviour
     private float _groundedGravity = -1f;
     private rotate rotateScript;
     public string parentGameObjectName;
+    private cameraRotate cameraScript;
+    public string cameraObjectName;
     private 
     
     Collider _playerCollider;
@@ -45,9 +47,19 @@ public class MovementController : MonoBehaviour
         _playerInput.CharacterControls.Jump.started += OnJumpInput;
         _playerInput.CharacterControls.Jump.canceled += OnJumpInput;
         _playerCollider = GetComponent<Collider>();
-        if (!string.IsNullOrEmpty(parentGameObjectName))
+        
+        if (!string.IsNullOrEmpty(parentGameObjectName)) //get level rotation script
         {
             rotateScript = GameObject.Find(parentGameObjectName).GetComponent<rotate>();
+        }
+        else
+        {
+            Debug.LogError("Please assign the parent GameObject's name in the Unity Inspector.");
+        }
+        
+        if (!string.IsNullOrEmpty(cameraObjectName)) //get camera rotation script
+        {
+            cameraScript = GameObject.Find(cameraObjectName).GetComponent<cameraRotate>();
         }
         else
         {
@@ -65,6 +77,27 @@ public class MovementController : MonoBehaviour
     void OnMovementInput(InputAction.CallbackContext context)
     {
         _currMovementInput = context.ReadValue<Vector2>();
+        //check camera rotation state to determine movement direction
+        if (cameraScript != null)
+        {
+            if (cameraScript.currentRotationState == cameraRotate.rotationStates.faceFront)
+            {
+                _currMovementInput = context.ReadValue<Vector2>();
+            }
+            else if (cameraScript.currentRotationState == cameraRotate.rotationStates.faceLeft)
+            {
+                _currMovementInput = new Vector2(context.ReadValue<Vector2>().y, -context.ReadValue<Vector2>().x);
+            }
+            else if (cameraScript.currentRotationState == cameraRotate.rotationStates.faceBack)
+            {
+                _currMovementInput = new Vector2(-context.ReadValue<Vector2>().x, -context.ReadValue<Vector2>().y);
+            }
+            else if (cameraScript.currentRotationState == cameraRotate.rotationStates.faceRight)
+            {
+                _currMovementInput = new Vector2(-context.ReadValue<Vector2>().y, context.ReadValue<Vector2>().x);
+            }
+        }
+        
         _currMovement.x = _currMovementInput.x * _moveFactor;
         _currMovement.z = _currMovementInput.y * _moveFactor;
         _isMovementPressed = _currMovementInput.x != 0 | _currMovementInput.y != 0;
