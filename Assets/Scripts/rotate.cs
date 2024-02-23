@@ -14,6 +14,10 @@ public class rotate : MonoBehaviour
     private Quaternion baseAngles;
     private bool rotationReset = true;
     public bool rotating = false;
+    public bool stationaryPlatform = true;
+    
+    private cameraRotate cameraScript;
+    public string cameraObjectName;
 
     //  // Variables for wall transparency...
     // public GameObject wall0, wall1, wall2, wall3;
@@ -30,11 +34,25 @@ public class rotate : MonoBehaviour
         currentXAngle = objectTransform.rotation.eulerAngles.x;
         baseAngles = objectTransform.rotation;
         // originalMaterial = DetermineFacingWall().GetComponent<Renderer>().material;
+        
+        if (!string.IsNullOrEmpty(cameraObjectName))
+        {
+            cameraScript = GameObject.Find(cameraObjectName).GetComponent<cameraRotate>();
+        }
+        else
+        {
+            Debug.LogError("Please assign the parent GameObject's name in the Unity Inspector.");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        bool isCameraReset = (cameraScript != null) ? cameraScript.rotationReset : false;
+        if (!isCameraReset)
+        {
+            rotationReset = false;
+        }
         if (_userRotateYInput != 0 || _userRotateXInput != 0 || !rotationReset) 
         {
             rotating = true;
@@ -47,22 +65,22 @@ public class rotate : MonoBehaviour
         // UpdateWallTransparency();
     }
 
-    IEnumerator RotateHori(float angle)
-    {
-        float duration = 1f;
-        Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
-        Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
-        float timePassed = 0f;
-        while (timePassed < duration)
-        {
-            rotationReset = false;
-            objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
-            timePassed += Time.deltaTime;
-            yield return null;
-        }
-        currentYAngle += angle;
-        objectTransform.rotation = endRotation; // Ensure the final rotation is set
-    }
+    // IEnumerator RotateHori(float angle)
+    // {
+    //     float duration = 1f;
+    //     Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
+    //     Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
+    //     float timePassed = 0f;
+    //     while (timePassed < duration)
+    //     {
+    //         rotationReset = false;
+    //         objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
+    //         timePassed += Time.deltaTime;
+    //         yield return null;
+    //     }
+    //     currentYAngle += angle;
+    //     objectTransform.rotation = endRotation; // Ensure the final rotation is set
+    // }
     
     IEnumerator RotateVerti(float angle)
     {
@@ -72,6 +90,7 @@ public class rotate : MonoBehaviour
         float timePassed = 0f;
         while (timePassed < duration)
         {
+            stationaryPlatform = false;
             rotationReset = false;
             objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
             timePassed += Time.deltaTime;
@@ -79,6 +98,7 @@ public class rotate : MonoBehaviour
         }
         currentXAngle += angle;
         rotateX = 0f;
+        stationaryPlatform = true;
         objectTransform.rotation = endRotation; // Ensure the final rotation is set
     }
 
@@ -87,8 +107,14 @@ public class rotate : MonoBehaviour
     {
         if (rotationReset)
         {
-            _userRotateYInput = Input.GetAxis("RotateHori");
-            _userRotateXInput = Input.GetAxis("RotateVerti");
+            if (_userRotateXInput == 0)
+            {
+                _userRotateYInput = Input.GetAxis("RotateHori");
+            }
+            if (_userRotateYInput == 0)
+            {
+                _userRotateXInput = Input.GetAxis("RotateVerti");
+            } 
         }
         else
         {
@@ -100,22 +126,23 @@ public class rotate : MonoBehaviour
             }
         }
 
-        if (_userRotateYInput != 0)
+        // if (_userRotateYInput != 0)
+        // {
+        //     if (Math.Abs(_userRotateYInput) < 1)
+        //     {
+        //         objectTransform.rotation = Quaternion.Euler(currentXAngle, currentYAngle + _userRotateYInput * 10f, 0);
+        //     } else if (_userRotateYInput == 1)
+        //     {
+        //         currentYAngle += 10f;
+        //         StartCoroutine(RotateHori(80f));
+        //     } else if (_userRotateYInput == -1)
+        //     { 
+        //         currentYAngle -= 10f;
+        //         StartCoroutine(RotateHori(-80f));
+        //     }
+        if (_userRotateXInput != 0)
         {
-            if (Math.Abs(_userRotateYInput) < 1)
-            {
-                objectTransform.rotation = Quaternion.Euler(currentXAngle, currentYAngle + _userRotateYInput * 10f, 0);
-            } else if (_userRotateYInput == 1)
-            {
-                currentYAngle += 10f;
-                StartCoroutine(RotateHori(80f));
-            } else if (_userRotateYInput == -1)
-            { 
-                currentYAngle -= 10f;
-                StartCoroutine(RotateHori(-80f));
-            }
-        } else if (_userRotateXInput != 0)
-        {
+            stationaryPlatform = false;
             if (Math.Abs(_userRotateXInput) < 1)
             {
                 objectTransform.rotation = Quaternion.Euler(currentXAngle + _userRotateXInput * 10f, currentYAngle, 0);
@@ -130,6 +157,10 @@ public class rotate : MonoBehaviour
                 rotateX = -90f;
                 StartCoroutine(RotateVerti(-80f));
             }
+        }
+        else
+        {
+            stationaryPlatform = true;
         }
     }
 
@@ -147,7 +178,7 @@ public class rotate : MonoBehaviour
         objectTransform.rotation = baseAngles;
         rotationReset = true;
     }
-    //
+    
     // private void UpdateWallTransparency()
     // {
     //     GameObject newFacingWall = DetermineFacingWall();
