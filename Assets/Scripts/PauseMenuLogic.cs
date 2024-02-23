@@ -48,12 +48,20 @@ public class PauseMenuLogic : MonoBehaviour
     public void restartLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
         SceneManager.LoadScene(currentSceneIndex);
     }
 
     public void backToMainMenu()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
         SceneManager.LoadScene(2);
     }
 }
