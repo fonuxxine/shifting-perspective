@@ -11,7 +11,7 @@ public class cameraRotate : MonoBehaviour
     public bool rotationReset = true;
     public float currentYAngle;
     private float currentXAngle;
-    public enum rotationStates {faceFront, faceLeft, faceBack, faceRight};
+    public enum rotationStates { faceFront = 0, faceLeft = 1, faceBack = 2, faceRight = 3 };
     public rotationStates currentRotationState;
     // Start is called before the first frame update
     void Start()
@@ -58,9 +58,8 @@ public class cameraRotate : MonoBehaviour
         }
     }
 
-    IEnumerator RotateHori(float angle)
+    IEnumerator RotateHori(float angle, float duration=1f)
     {
-        float duration = 1f;
         Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
         Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
         updateRotationState(angle);
@@ -79,49 +78,41 @@ public class cameraRotate : MonoBehaviour
     
     void updateRotationState(float rotAngle)
     {
-        if(currentRotationState == rotationStates.faceFront)
+        // print("Now Rotation State: " + currentRotationState.ToString());
+
+        // map the currentRotationState enum to an integer
+        int currentStateValue = (int) currentRotationState;
+
+        // calculate the adjusted quarter rotations based on the current rotation state
+        int quarterRotations = Mathf.RoundToInt(rotAngle / 90f + currentStateValue) % 4;
+
+        // shift negative quarter rotations
+        if (quarterRotations < 0)
         {
-            if(rotAngle == 80f)
-            {
-                currentRotationState = rotationStates.faceLeft;
-            }
-            else if(rotAngle == -80f)
-            {
-                currentRotationState = rotationStates.faceRight;
-            }
+            quarterRotations += 4;
         }
-        else if(currentRotationState == rotationStates.faceLeft)
+        
+        // set new rotation state
+        if (quarterRotations is >= 0 and < 4)
         {
-            if(rotAngle == 80f)
-            {
-                currentRotationState = rotationStates.faceBack;
-            }
-            else if(rotAngle == -80f)
-            {
-                currentRotationState = rotationStates.faceFront;
-            }
+            currentRotationState = (rotationStates) quarterRotations;
+            // print("New Rotation State: " + currentRotationState.ToString());
         }
-        else if(currentRotationState == rotationStates.faceBack)
-        {
-            if(rotAngle == 80f)
-            {
-                currentRotationState = rotationStates.faceRight;
-            }
-            else if(rotAngle == -80f)
-            {
-                currentRotationState = rotationStates.faceLeft;
-            }
-        }
-        else if(currentRotationState == rotationStates.faceRight)
-        {
-            if(rotAngle == 80f)
-            {
-                currentRotationState = rotationStates.faceFront;
-            }
-            else if(rotAngle == -80f)
-            {
-                currentRotationState = rotationStates.faceBack;
-            }
-        }
+        // else
+        // {
+        //     print("Old Rotation State: " + currentRotationState.ToString());
+        // }
     }
+    
+    public void ResetRotation(Quaternion baseAngles)
+    {
+        // Debug.Log("Current Angle: " + currentYAngle);
+        // Debug.Log("Target Angle: " + (baseAngles.eulerAngles.y - 270)); // TODO add parameter to CheckpointHit for this 270 modifier
+        float diff = Mathf.DeltaAngle(currentYAngle, baseAngles.eulerAngles.y - 270);
+        // Debug.Log("Calculated Diff: " + diff);
+
+        float duration = diff == 0 ? 0 : 0.75f;
+        StartCoroutine(RotateHori(diff, duration:duration));
+    }
+
 }

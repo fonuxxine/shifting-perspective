@@ -82,9 +82,8 @@ public class rotate : MonoBehaviour
     //     objectTransform.rotation = endRotation; // Ensure the final rotation is set
     // }
     
-    IEnumerator RotateVerti(float angle)
+    IEnumerator RotateVerti(float angle, float duration=1f)
     {
-        float duration = 1f;
         Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
         Quaternion endRotation = Quaternion.Euler(currentXAngle + angle, currentYAngle, 0);
         float timePassed = 0f;
@@ -173,10 +172,11 @@ public class rotate : MonoBehaviour
     // reset the rotation of the level to the base rotation for this portion of the stage
     public void ResetRotation()
     {
-        currentXAngle = baseAngles.eulerAngles.x;
-        currentYAngle = baseAngles.eulerAngles.y;
-        objectTransform.rotation = baseAngles;
-        rotationReset = true;
+        cameraScript.ResetRotation(baseAngles);
+        
+        float diff = Mathf.DeltaAngle(currentXAngle, baseAngles.eulerAngles.x);
+        float duration = diff == 0 ? 0 : 0.75f;
+        StartCoroutine(RotateVerti(diff, duration:duration));
     }
     
     // private void UpdateWallTransparency()
