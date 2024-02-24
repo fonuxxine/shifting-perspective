@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
@@ -52,16 +50,15 @@ public class PauseMenuLogic : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        SceneManager.LoadScene(currentSceneIndex);
+        SceneLoader.LoadSceneByBuildIndex(currentSceneIndex);
     }
 
     public void backToMainMenu()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
         }
-        SceneManager.LoadScene(2);
+        SceneLoader.LoadScene(SceneID.MainMenu);
     }
 }
