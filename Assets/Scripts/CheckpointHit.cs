@@ -105,6 +105,7 @@ public class CheckpointHit : MonoBehaviour
             if (respawnPlaceholder != null)
             {
                 respawnPoint.transform.position = respawnPlaceholder.position;
+                respawnPoint.transform.rotation = respawnPlaceholder.rotation;
             }
             else
             {
