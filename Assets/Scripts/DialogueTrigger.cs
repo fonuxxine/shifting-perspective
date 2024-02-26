@@ -46,7 +46,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         // check if the player is in range of the NPC
         _isInRange = Vector3.Distance(_player.position, _npc.position) <= interactionDistance;
-    
+
         // activate dialogue prompt when player presses ENTER and is in range
         if (_isInRange && Input.GetKeyDown(KeyCode.Return))
         {
@@ -56,6 +56,12 @@ public class DialogueTrigger : MonoBehaviour
         {
             // show ENTER KEY image when player is in range and not pressing ENTER
             SetEnterKeyImageActive(_isInRange);
+
+            // make the Enter Key image face the camera
+            if (_hasEnterPrompt && _isInRange)
+            {
+                _enterKeyImage.transform.LookAt(_enterKeyImage.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+            }
         }
     }
     
