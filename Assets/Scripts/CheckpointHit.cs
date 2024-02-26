@@ -92,7 +92,7 @@ public class CheckpointHit : MonoBehaviour
         {
             newPreviousCheckpoints[i] = previousCheckpoints[i];
         }
-        newPreviousCheckpoints[newPreviousCheckpoints.Length - 1] = newCheckpoint;
+        newPreviousCheckpoints[^1] = newCheckpoint;
         previousCheckpoints = newPreviousCheckpoints;
     }
 

@@ -18,6 +18,7 @@ public class rotate : MonoBehaviour
     
     private cameraRotate cameraScript;
     public string cameraObjectName;
+    public bool ext = false;
 
     //  // Variables for wall transparency...
     // public GameObject wall0, wall1, wall2, wall3;
@@ -139,27 +140,33 @@ public class rotate : MonoBehaviour
         //         currentYAngle -= 10f;
         //         StartCoroutine(RotateHori(-80f));
         //     }
-        if (_userRotateXInput != 0)
+        if (!ext)
         {
-            stationaryPlatform = false;
-            if (Math.Abs(_userRotateXInput) < 1)
+            if (_userRotateXInput != 0)
             {
-                objectTransform.rotation = Quaternion.Euler(currentXAngle + _userRotateXInput * 10f, currentYAngle, 0);
-            } else if (_userRotateXInput == 1)
-            {
-                currentXAngle += 10f;
-                rotateX = 90f;
-                StartCoroutine(RotateVerti(80f));
-            } else if (_userRotateXInput == -1)
-            { 
-                currentXAngle -= 10f;
-                rotateX = -90f;
-                StartCoroutine(RotateVerti(-80f));
+                stationaryPlatform = false;
+                if (Math.Abs(_userRotateXInput) < 1)
+                {
+                    objectTransform.rotation =
+                        Quaternion.Euler(currentXAngle + _userRotateXInput * 10f, currentYAngle, 0);
+                }
+                else if (_userRotateXInput == 1)
+                {
+                    currentXAngle += 10f;
+                    rotateX = 90f;
+                    StartCoroutine(RotateVerti(80f));
+                }
+                else if (_userRotateXInput == -1)
+                {
+                    currentXAngle -= 10f;
+                    rotateX = -90f;
+                    StartCoroutine(RotateVerti(-80f));
+                }
             }
-        }
-        else
-        {
-            stationaryPlatform = true;
+            else
+            {
+                stationaryPlatform = true;
+            }
         }
     }
 
@@ -170,13 +177,13 @@ public class rotate : MonoBehaviour
     }
 
     // reset the rotation of the level to the base rotation for this portion of the stage
-    public void ResetRotation()
+    public IEnumerator ResetRotation()
     {
         cameraScript.ResetRotation(baseAngles);
         
         float diff = Mathf.DeltaAngle(currentXAngle, baseAngles.eulerAngles.x);
         float duration = diff == 0 ? 0 : 0.75f;
-        StartCoroutine(RotateVerti(diff, duration:duration));
+        yield return StartCoroutine(RotateVerti(diff, duration:duration));
     }
     
     // private void UpdateWallTransparency()
