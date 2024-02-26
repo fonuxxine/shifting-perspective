@@ -177,13 +177,13 @@ public class rotate : MonoBehaviour
     }
 
     // reset the rotation of the level to the base rotation for this portion of the stage
-    public void ResetRotation()
+    public IEnumerator ResetRotation()
     {
         cameraScript.ResetRotation(baseAngles);
         
         float diff = Mathf.DeltaAngle(currentXAngle, baseAngles.eulerAngles.x);
         float duration = diff == 0 ? 0 : 0.75f;
-        StartCoroutine(RotateVerti(diff, duration:duration));
+        yield return StartCoroutine(RotateVerti(diff, duration:duration));
     }
     
     // private void UpdateWallTransparency()
