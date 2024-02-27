@@ -214,9 +214,14 @@ public class MovementController : MonoBehaviour
             _animator.SetBool("isJumping", false);
         }
 
-        if (1.0f > Time.time - _lastGroundedTime && Time.time - _lastGroundedTime > 0.7f)
+        if (Time.time - _lastGroundedTime > _maxJumpTime && Time.time - _lastGroundedTime < _maxJumpTime + 0.2f)
         {
+            Debug.Log("landing");
             _animator.SetBool("isLanding", true);
+        }
+        else
+        {
+            _animator.SetBool("isLanding", false);
         }
     }
 
