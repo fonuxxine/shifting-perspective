@@ -51,8 +51,9 @@ public class DialogueTrigger : MonoBehaviour
         if (_isInRange && Input.GetKeyDown(KeyCode.Return))
         {
             ActivateDialogue();
+            _hasEnterPrompt = false;
         }
-        else
+        else if (_hasEnterPrompt)
         {
             // show ENTER KEY image when player is in range and not pressing ENTER
             SetEnterKeyImageActive(_isInRange);
