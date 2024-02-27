@@ -85,8 +85,8 @@ public class rotate : MonoBehaviour
     
     IEnumerator RotateVerti(float angle, float duration=1f)
     {
-        Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
-        Quaternion endRotation = Quaternion.Euler(currentXAngle + angle, currentYAngle, 0);
+        Quaternion startRotation = Quaternion.Euler(0, currentYAngle, currentXAngle);
+        Quaternion endRotation = Quaternion.Euler(0, currentYAngle, currentXAngle + angle);
         float timePassed = 0f;
         while (timePassed < duration)
         {
@@ -148,7 +148,7 @@ public class rotate : MonoBehaviour
                 if (Math.Abs(_userRotateXInput) < 1)
                 {
                     objectTransform.rotation =
-                        Quaternion.Euler(currentXAngle + _userRotateXInput * 10f, currentYAngle, 0);
+                        Quaternion.Euler(0, currentYAngle, currentXAngle + _userRotateXInput * 10f);
                 }
                 else if (_userRotateXInput == 1)
                 {
