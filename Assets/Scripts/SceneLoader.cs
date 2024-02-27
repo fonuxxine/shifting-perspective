@@ -2,7 +2,7 @@ using UnityEngine.SceneManagement;
 
 public enum SceneID {
     MainMenu,
-    ExtLvl,
+    ExtLevel,
     SampleScene,
     ToBeContinued
 }

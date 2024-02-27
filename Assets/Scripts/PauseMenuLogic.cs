@@ -66,11 +66,13 @@ public class PauseMenuLogic : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         
-        if (currentScene.name == SceneLoader.GetSceneName(SceneID.ExtLvl))
+        if (currentScene.name == SceneLoader.GetSceneName(SceneID.ExtLevel))
         {
+            Time.timeScale = 1;
             SceneLoader.LoadScene(SceneID.SampleScene);
-        } else if (currentScene.name == SceneLoader.GetSceneName(SceneID.ExtLvl))
+        } else if (currentScene.name == SceneLoader.GetSceneName(SceneID.SampleScene))
         {
+            Time.timeScale = 1;
             SceneLoader.LoadScene(SceneID.ToBeContinued);
         }
     }
