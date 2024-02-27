@@ -181,7 +181,10 @@ public class rotate : MonoBehaviour
     {
         cameraScript.ResetRotation(baseAngles);
         
-        float diff = Mathf.DeltaAngle(currentXAngle, baseAngles.eulerAngles.x);
+        // Debug.Log("Current Angle X: " + currentXAngle);
+        // Debug.Log("Target Angle X: " + (baseAngles.eulerAngles.z));
+        
+        float diff = Mathf.DeltaAngle(currentXAngle, (baseAngles.eulerAngles.z >= 0 && baseAngles.eulerAngles.z <= 1) ? 0 : baseAngles.eulerAngles.z);
         float duration = diff == 0 ? 0 : 0.75f;
         yield return StartCoroutine(RotateVerti(diff, duration:duration));
     }

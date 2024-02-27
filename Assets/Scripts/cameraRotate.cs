@@ -78,7 +78,7 @@ public class cameraRotate : MonoBehaviour
     
     void updateRotationState(float rotAngle)
     {
-        // print("Now Rotation State: " + currentRotationState.ToString());
+        print("Now Rotation State: " + currentRotationState.ToString());
 
         // map the currentRotationState enum to an integer
         int currentStateValue = (int) currentRotationState;
@@ -106,9 +106,9 @@ public class cameraRotate : MonoBehaviour
     
     public void ResetRotation(Quaternion baseAngles)
     {
-        // Debug.Log("Current Angle: " + currentYAngle);
-        // Debug.Log("Target Angle: " + (baseAngles.eulerAngles.y - 270)); // TODO add parameter to CheckpointHit for this 270 modifier
-        float diff = Mathf.DeltaAngle(currentYAngle, baseAngles.eulerAngles.y - 270);
+        // Debug.Log("Current Angle Y: " + currentYAngle);
+        // Debug.Log("Target Angle Y: " + (baseAngles.eulerAngles.y - 180)); // TODO add parameter to CheckpointHit for this 180 modifier
+        float diff = Mathf.DeltaAngle(currentYAngle, baseAngles.eulerAngles.y - 180);
         // Debug.Log("Calculated Diff: " + diff);
 
         float duration = diff == 0 ? 0 : 0.75f;
