@@ -4946,7 +4946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113582147491779010, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: interactionDistance
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7842535378202221080, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_LocalRotation.w
