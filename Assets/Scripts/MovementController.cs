@@ -24,6 +24,7 @@ public class MovementController : MonoBehaviour
     // modify this value for longer Jump time
     public float _maxJumpTime = 0.75f;
     private bool _isJumping;
+    private float _lastGroundedTime;
     
     private float _gravity = -9.8f;
     private float _groundedGravity = -1f;
@@ -114,6 +115,7 @@ public class MovementController : MonoBehaviour
         {
             _isJumping = true;
             _currMovement.y = _initialJumpVelocity * .5f;
+            _lastGroundedTime = Time.time;
         }
         else if (!_isJumpPressed && _characterController.isGrounded && _isJumping)
         {
@@ -134,6 +136,7 @@ public class MovementController : MonoBehaviour
             float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
             float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
             _currMovement.y = nextYVelocity;
+            
         }
         else
         {
@@ -209,6 +212,11 @@ public class MovementController : MonoBehaviour
         if (isJumping && !_isJumpPressed)
         {
             _animator.SetBool("isJumping", false);
+        }
+
+        if (1.0f > Time.time - _lastGroundedTime && Time.time - _lastGroundedTime > 0.7f)
+        {
+            _animator.SetBool("isLanding", true);
         }
     }
 
