@@ -16,7 +16,6 @@ public class PauseMenuLogic : MonoBehaviour
     // update is called once per frame
     void Update()
     {
-        // Debug.Log("Running");
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             paused = !paused;
@@ -60,5 +59,19 @@ public class PauseMenuLogic : MonoBehaviour
             Time.timeScale = 1;
         }
         SceneLoader.LoadScene(SceneID.MainMenu);
+    }
+
+    // --- The below function was added for the Alpha demo ---
+    public void skipLevel()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        
+        if (currentScene.name == SceneLoader.GetSceneName(SceneID.ExtLvl))
+        {
+            SceneLoader.LoadScene(SceneID.SampleScene);
+        } else if (currentScene.name == SceneLoader.GetSceneName(SceneID.ExtLvl))
+        {
+            SceneLoader.LoadScene(SceneID.ToBeContinued);
+        }
     }
 }
