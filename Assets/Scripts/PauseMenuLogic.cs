@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PauseMenuLogic : MonoBehaviour
@@ -7,26 +6,26 @@ public class PauseMenuLogic : MonoBehaviour
     private bool paused;
     public GameObject menu;
     
-    // Start is called before the first frame update
+    // start is called before the first frame update
     void Start()
     {
+        menu.SetActive(false);
         paused = false;
     }
 
-    // Update is called once per frame
+    // update is called once per frame
     void Update()
     {
-        Debug.Log("Running");
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             paused = !paused;
             if (paused)
             {
-                unpauseGame();
+                pauseGame();
             }
             else
             {
-                pauseGame();
+                unpauseGame();
             }
         }
     }
@@ -41,5 +40,40 @@ public class PauseMenuLogic : MonoBehaviour
     {
         Time.timeScale = 1;
         menu.SetActive(false);
+    }
+
+    public void restartLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        SceneLoader.LoadSceneByBuildIndex(currentSceneIndex);
+    }
+
+    public void backToMainMenu()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        SceneLoader.LoadScene(SceneID.MainMenu);
+    }
+
+    // --- The below function was added for the Alpha demo ---
+    public void skipLevel()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        
+        if (currentScene.name == SceneLoader.GetSceneName(SceneID.ExtLevel))
+        {
+            Time.timeScale = 1;
+            SceneLoader.LoadScene(SceneID.IntLevel1);
+        } else if (currentScene.name == SceneLoader.GetSceneName(SceneID.IntLevel1))
+        {
+            Time.timeScale = 1;
+            SceneLoader.LoadScene(SceneID.ToBeContinued);
+        }
     }
 }

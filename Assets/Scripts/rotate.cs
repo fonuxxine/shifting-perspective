@@ -11,8 +11,14 @@ public class rotate : MonoBehaviour
     private Transform objectTransform;
     private float currentYAngle;
     private float currentXAngle;
+    private Quaternion baseAngles;
     private bool rotationReset = true;
     public bool rotating = false;
+    public bool stationaryPlatform = true;
+    
+    private cameraRotate cameraScript;
+    public string cameraObjectName;
+    public bool ext = false;
 
     //  // Variables for wall transparency...
     // public GameObject wall0, wall1, wall2, wall3;
@@ -27,12 +33,27 @@ public class rotate : MonoBehaviour
         objectTransform = gameObject.GetComponent<Transform>();
         currentYAngle = objectTransform.rotation.eulerAngles.y;
         currentXAngle = objectTransform.rotation.eulerAngles.x;
+        baseAngles = objectTransform.rotation;
         // originalMaterial = DetermineFacingWall().GetComponent<Renderer>().material;
+        
+        if (!string.IsNullOrEmpty(cameraObjectName))
+        {
+            cameraScript = GameObject.Find(cameraObjectName).GetComponent<cameraRotate>();
+        }
+        else
+        {
+            Debug.LogError("Please assign the parent GameObject's name in the Unity Inspector.");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        bool isCameraReset = (cameraScript != null) ? cameraScript.rotationReset : false;
+        if (!isCameraReset)
+        {
+            rotationReset = false;
+        }
         if (_userRotateYInput != 0 || _userRotateXInput != 0 || !rotationReset) 
         {
             rotating = true;
@@ -45,31 +66,31 @@ public class rotate : MonoBehaviour
         // UpdateWallTransparency();
     }
 
-    IEnumerator RotateHori(float angle)
-    {
-        float duration = 1f;
-        Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
-        Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
-        float timePassed = 0f;
-        while (timePassed < duration)
-        {
-            rotationReset = false;
-            objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
-            timePassed += Time.deltaTime;
-            yield return null;
-        }
-        currentYAngle += angle;
-        objectTransform.rotation = endRotation; // Ensure the final rotation is set
-    }
+    // IEnumerator RotateHori(float angle)
+    // {
+    //     float duration = 1f;
+    //     Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
+    //     Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
+    //     float timePassed = 0f;
+    //     while (timePassed < duration)
+    //     {
+    //         rotationReset = false;
+    //         objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
+    //         timePassed += Time.deltaTime;
+    //         yield return null;
+    //     }
+    //     currentYAngle += angle;
+    //     objectTransform.rotation = endRotation; // Ensure the final rotation is set
+    // }
     
-    IEnumerator RotateVerti(float angle)
+    IEnumerator RotateVerti(float angle, float duration=1f)
     {
-        float duration = 1f;
-        Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
-        Quaternion endRotation = Quaternion.Euler(currentXAngle + angle, currentYAngle, 0);
+        Quaternion startRotation = Quaternion.Euler(0, currentYAngle, currentXAngle);
+        Quaternion endRotation = Quaternion.Euler(0, currentYAngle, currentXAngle + angle);
         float timePassed = 0f;
         while (timePassed < duration)
         {
+            stationaryPlatform = false;
             rotationReset = false;
             objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
             timePassed += Time.deltaTime;
@@ -77,6 +98,7 @@ public class rotate : MonoBehaviour
         }
         currentXAngle += angle;
         rotateX = 0f;
+        stationaryPlatform = true;
         objectTransform.rotation = endRotation; // Ensure the final rotation is set
     }
 
@@ -85,8 +107,14 @@ public class rotate : MonoBehaviour
     {
         if (rotationReset)
         {
-            _userRotateYInput = Input.GetAxis("RotateHori");
-            _userRotateXInput = Input.GetAxis("RotateVerti");
+            if (_userRotateXInput == 0)
+            {
+                _userRotateYInput = Input.GetAxis("RotateHori");
+            }
+            if (_userRotateYInput == 0)
+            {
+                _userRotateXInput = Input.GetAxis("RotateVerti");
+            } 
         }
         else
         {
@@ -98,48 +126,69 @@ public class rotate : MonoBehaviour
             }
         }
 
-        if (_userRotateYInput != 0)
+        // if (_userRotateYInput != 0)
+        // {
+        //     if (Math.Abs(_userRotateYInput) < 1)
+        //     {
+        //         objectTransform.rotation = Quaternion.Euler(currentXAngle, currentYAngle + _userRotateYInput * 10f, 0);
+        //     } else if (_userRotateYInput == 1)
+        //     {
+        //         currentYAngle += 10f;
+        //         StartCoroutine(RotateHori(80f));
+        //     } else if (_userRotateYInput == -1)
+        //     { 
+        //         currentYAngle -= 10f;
+        //         StartCoroutine(RotateHori(-80f));
+        //     }
+        if (!ext)
         {
-            if (Math.Abs(_userRotateYInput) < 1)
+            if (_userRotateXInput != 0)
             {
-                objectTransform.rotation = Quaternion.Euler(currentXAngle, currentYAngle + _userRotateYInput * 10f, 0);
-            } else if (_userRotateYInput == 1)
-            {
-                currentYAngle += 10f;
-                StartCoroutine(RotateHori(80f));
-            } else if (_userRotateYInput == -1)
-            { 
-                currentYAngle -= 10f;
-                StartCoroutine(RotateHori(-80f));
+                stationaryPlatform = false;
+                if (Math.Abs(_userRotateXInput) < 1)
+                {
+                    objectTransform.rotation =
+                        Quaternion.Euler(0, currentYAngle, currentXAngle + _userRotateXInput * 10f);
+                }
+                else if (_userRotateXInput == 1)
+                {
+                    currentXAngle += 10f;
+                    rotateX = 90f;
+                    StartCoroutine(RotateVerti(80f));
+                }
+                else if (_userRotateXInput == -1)
+                {
+                    currentXAngle -= 10f;
+                    rotateX = -90f;
+                    StartCoroutine(RotateVerti(-80f));
+                }
             }
-        } else if (_userRotateXInput != 0)
-        {
-            if (Math.Abs(_userRotateXInput) < 1)
+            else
             {
-                objectTransform.rotation = Quaternion.Euler(currentXAngle + _userRotateXInput * 10f, currentYAngle, 0);
-            } else if (_userRotateXInput == 1)
-            {
-                currentXAngle += 10f;
-                rotateX = 90f;
-                StartCoroutine(RotateVerti(80f));
-            } else if (_userRotateXInput == -1)
-            { 
-                currentXAngle -= 10f;
-                rotateX = -90f;
-                StartCoroutine(RotateVerti(-80f));
+                stationaryPlatform = true;
             }
         }
     }
 
-    public void ResetRotation()
+    // update the level used as the default/base angle for this portion of the level
+    public void UpdateBaseAngles(Quaternion angles)
     {
-        // reset rotation angles to 0
-        currentXAngle = 0f;
-        currentYAngle = 0f;
-        objectTransform.rotation = Quaternion.identity;
-        rotationReset = true;
+        baseAngles = angles;
     }
-    //
+
+    // reset the rotation of the level to the base rotation for this portion of the stage
+    public IEnumerator ResetRotation()
+    {
+        cameraScript.ResetRotation(baseAngles);
+        
+        // Debug.Log("Current Angle X: " + currentXAngle);
+        // Debug.Log("Target Angle X: " + (baseAngles.eulerAngles.z));
+        
+        float diff = Mathf.DeltaAngle(currentXAngle, (baseAngles.eulerAngles.z >= 0 && baseAngles.eulerAngles.z <= 1) ? 0 : baseAngles.eulerAngles.z);
+        float duration = diff == 0 ? 0 : 0.75f;
+        yield return StartCoroutine(RotateVerti(diff, duration:duration));
+    }
+    
     // private void UpdateWallTransparency()
     // {
     //     GameObject newFacingWall = DetermineFacingWall();

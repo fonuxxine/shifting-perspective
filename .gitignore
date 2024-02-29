@@ -76,3 +76,4 @@ crashlytics-build.properties
 .idea
 
 /ProjectSettings/
+mono_crash.0.0.json
