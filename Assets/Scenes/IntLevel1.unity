@@ -65426,7 +65426,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6223356489834725194, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.04
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6223356489834725194, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_LocalScale.y
@@ -65931,8 +65931,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  time: 0.20000000298023224
-  minimalOpacity: 0.5
+  time: 1
+  minimalOpacity: 0.1
   playerTransform: {fileID: 923547670}
 --- !u!114 &963194231
 MonoBehaviour:
@@ -95884,7 +95884,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1516352175}
   - component: {fileID: 1516352174}
-  - component: {fileID: 1516352173}
   - component: {fileID: 1516352176}
   m_Layer: 0
   m_Name: Virtual Camera
@@ -95893,36 +95892,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1516352173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516352172}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CollideAgainst:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IgnoreTag: 
-  m_TransparentLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_MinimumDistanceFromTarget: 0.5
-  m_AvoidObstacles: 1
-  m_DistanceLimit: 0
-  m_MinimumOcclusionTime: 0
-  m_CameraRadius: 0.1
-  m_Strategy: 0
-  m_MaximumEffort: 4
-  m_SmoothingTime: 0
-  m_Damping: 0
-  m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
 --- !u!114 &1516352174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95993,6 +95962,7 @@ MonoBehaviour:
   parentGameObjectName: Level_1
   rotationReset: 1
   currentYAngle: 0
+  rotationSpeed: 0.2
   currentRotationState: 0
 --- !u!1 &1524590349 stripped
 GameObject:
@@ -107330,7 +107300,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6223356489834725194, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.04
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6223356489834725194, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_LocalScale.y
@@ -112844,7 +112814,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6223356489834725194, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.04
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6223356489834725194, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_LocalScale.y
