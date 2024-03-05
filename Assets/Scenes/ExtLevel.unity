@@ -10407,7 +10407,7 @@ MonoBehaviour:
   - Hey look, we're almost there!
   - What are you standing around for? Come on!
   - You didn't forget how to move, did you? Use WASD to move around.
-  textSpeed: 0.2
+  textSpeed: 0.125
   activateAfter: {fileID: 1343722041}
 --- !u!1001 &452078602
 PrefabInstance:
@@ -10668,7 +10668,7 @@ MonoBehaviour:
   - I saw a lever up on the wall, maybe you could use it to open the gate!
   - But how will you get up there? Maybe there's a way to scale the wall?
   - I'll try looking around.
-  textSpeed: 0.2
+  textSpeed: 0.125
   activateAfter: {fileID: 921700515}
 --- !u!114 &518263333
 MonoBehaviour:
