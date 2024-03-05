@@ -2,39 +2,47 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
 public class MovementController : MonoBehaviour
 {
     private PlayerInput _playerInput;
     private CharacterController _characterController;
     private Animator _animator;
-    
+
     private Vector2 _currMovementInput;
     private Vector3 _currMovement;
 
     private bool _isMovementPressed = false;
     public float _moveFactor = 1.0f;
     public float _rotationFactor = 2.0f;
-    
+
     private bool _isJumpPressed = false;
+
     private float _initialJumpVelocity;
+
     // modify this value for larger Jump height
     public float _maxJumpHeight = 4.0f;
+
     // modify this value for longer Jump time
     public float _maxJumpTime = 0.75f;
     private bool _isJumping;
     private float _lastGroundedTime;
-    
+    private float _timeFalling = 0f;
+
     private float _gravity = -9.8f;
     private float _groundedGravity = -1f;
     private rotate rotateScript;
     public string parentGameObjectName;
     private cameraRotate cameraScript;
     public string cameraObjectName;
-    private 
-    
-    Collider _playerCollider;
+    private Collider _playerCollider;
+
+    public bool damage = false;
+
+    private float _vyCache;
 
     private void Awake()
     {
@@ -48,7 +56,7 @@ public class MovementController : MonoBehaviour
         _playerInput.CharacterControls.Jump.started += OnJumpInput;
         _playerInput.CharacterControls.Jump.canceled += OnJumpInput;
         _playerCollider = GetComponent<Collider>();
-        
+
         if (!string.IsNullOrEmpty(parentGameObjectName)) //get level rotation script
         {
             rotateScript = GameObject.Find(parentGameObjectName).GetComponent<rotate>();
@@ -57,7 +65,7 @@ public class MovementController : MonoBehaviour
         {
             Debug.LogError("Please assign the parent GameObject's name in the Unity Inspector.");
         }
-        
+
         if (!string.IsNullOrEmpty(cameraObjectName)) //get camera rotation script
         {
             cameraScript = GameObject.Find(cameraObjectName).GetComponent<cameraRotate>();
@@ -98,12 +106,12 @@ public class MovementController : MonoBehaviour
                 _currMovementInput = new Vector2(-context.ReadValue<Vector2>().y, context.ReadValue<Vector2>().x);
             }
         }
-        
+
         _currMovement.x = _currMovementInput.x * _moveFactor;
         _currMovement.z = _currMovementInput.y * _moveFactor;
         _isMovementPressed = _currMovementInput.x != 0 | _currMovementInput.y != 0;
     }
-    
+
     void OnJumpInput(InputAction.CallbackContext context)
     {
         _isJumpPressed = context.ReadValueAsButton();
@@ -119,7 +127,7 @@ public class MovementController : MonoBehaviour
         }
         else if (!_isJumpPressed && _characterController.isGrounded && _isJumping)
         {
-            _isJumping = false; 
+            _isJumping = false;
         }
     }
 
@@ -130,13 +138,15 @@ public class MovementController : MonoBehaviour
         if (_characterController.isGrounded)
         {
             _currMovement.y = _groundedGravity;
-        } else if (isFalling)
+            _timeFalling = 0f;
+        }
+        else if (isFalling)
         {
             float prevYVelocity = _currMovement.y;
             float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
             float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
             _currMovement.y = nextYVelocity;
-            
+            _timeFalling += Time.deltaTime;
         }
         else
         {
@@ -145,7 +155,9 @@ public class MovementController : MonoBehaviour
             float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
             _currMovement.y = nextYVelocity;
         }
-        
+
+        _vyCache = _currMovement.y;
+
         // bool isFalling =  _currMovement.y <= 0.0f || !_isJumping;
         // float fallMult = 2.0f;
         //
@@ -175,7 +187,7 @@ public class MovementController : MonoBehaviour
         //     float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
         //     _currMovement.y = nextYVelocity;
         // }
-        
+
         //
         //
         // if (_characterController.isGrounded)
@@ -209,6 +221,7 @@ public class MovementController : MonoBehaviour
         {
             _animator.SetBool("isJumping", true);
         }
+
         if (isJumping && !_isJumpPressed)
         {
             _animator.SetBool("isJumping", false);
@@ -244,15 +257,15 @@ public class MovementController : MonoBehaviour
     void handleRotateLevel()
     {
         Quaternion currDirection = transform.rotation;
-        
+
         float rotateX = (rotateScript != null) ? rotateScript.rotateX : 0f;
         Quaternion targetDirection = Quaternion.Euler(
-            currDirection.eulerAngles.x + 2*rotateX,
-            currDirection.eulerAngles.y, 
+            currDirection.eulerAngles.x + 2 * rotateX,
+            currDirection.eulerAngles.y,
             currDirection.eulerAngles.z);
         transform.rotation = Quaternion.Slerp(currDirection, targetDirection, _rotationFactor * Time.deltaTime);
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -272,13 +285,22 @@ public class MovementController : MonoBehaviour
             //handleRotateLevel();
             _animator.enabled = false;
         }
+        bool isFalling = _currMovement.y <= 0.0f || !_isJumpPressed;
+        if (isFalling && _timeFalling > 1)
+        {
+            damage = true;
+        }
+        else
+        {
+            damage = false;
+        }
     }
 
     private void OnEnable()
     {
         _playerInput.CharacterControls.Enable();
     }
-    
+
     private void OnDisable()
     {
         _playerInput.CharacterControls.Disable();
