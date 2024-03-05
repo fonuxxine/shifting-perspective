@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class OldDialogueTrigger : MonoBehaviour
 {
     public float interactionDistance = 0.5f; // distance within which interaction can occur
     
