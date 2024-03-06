@@ -13910,6 +13910,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
+  hearts:
+  - {fileID: 1923055327}
+  - {fileID: 325832197}
+  - {fileID: 2115409432}
+  fullHeart: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  emptyHeart: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!224 &1072877308 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7598943642253630561, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
