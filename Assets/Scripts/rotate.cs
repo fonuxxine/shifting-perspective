@@ -19,6 +19,8 @@ public class rotate : MonoBehaviour
     private cameraRotate cameraScript;
     public string cameraObjectName;
     public bool ext = false;
+    // check if character is grounded
+    private bool _grounded = true;
 
     //  // Variables for wall transparency...
     // public GameObject wall0, wall1, wall2, wall3;
@@ -61,7 +63,11 @@ public class rotate : MonoBehaviour
         {
             rotating = false;
         }
-        HandleRotationInput();
+
+        if (_grounded)
+        {
+            HandleRotationInput();
+        }
         
         // UpdateWallTransparency();
     }
@@ -187,6 +193,17 @@ public class rotate : MonoBehaviour
         float diff = Mathf.DeltaAngle(currentXAngle, (baseAngles.eulerAngles.z >= 0 && baseAngles.eulerAngles.z <= 1) ? 0 : baseAngles.eulerAngles.z);
         float duration = diff == 0 ? 0 : 0.75f;
         yield return StartCoroutine(RotateVerti(diff, duration:duration));
+    }
+    
+    // set rotation input to 0 if character is not grounded
+    public void SetRotationInput()
+    {
+        _grounded = false;
+    }
+
+    public void AllowRotation()
+    {
+        _grounded = true;
     }
     
     // private void UpdateWallTransparency()
