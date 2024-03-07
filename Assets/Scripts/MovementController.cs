@@ -248,10 +248,10 @@ public class MovementController : MonoBehaviour
             _playerHealth.DecreaseHealth(1);
             _damage = false;
         }
-        if (!_characterController.isGrounded)
-        {
-            rotateScript.SetRotationInput();
-        }
+        // if (!_characterController.isGrounded)
+        // {
+        //     rotateScript.SetRotationInput();
+        // }
     }
 
     private void OnEnable()
