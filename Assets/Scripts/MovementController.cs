@@ -14,7 +14,7 @@ public class MovementController : MonoBehaviour
     private Vector3 _currMovement;
 
     private bool _isMovementPressed = false;
-    public float _moveFactor = 1.0f;
+    public float _moveFactor = 1.5f;
     public float _rotationFactor = 2.0f;
     
     private bool _isJumpPressed = false;
@@ -25,6 +25,11 @@ public class MovementController : MonoBehaviour
     public float _maxJumpTime = 0.75f;
     private bool _isJumping;
     private float _lastGroundedTime;
+    
+    // handle fall damage
+    private float _timeFalling = 0f;
+    private bool _damage = false;
+    private PlayerHealth _playerHealth;
     
     private float _gravity = -9.8f;
     private float _groundedGravity = -1f;
@@ -41,6 +46,8 @@ public class MovementController : MonoBehaviour
         _playerInput = new PlayerInput();
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        _playerHealth = GetComponent<PlayerHealth>();
+        
 
         _playerInput.CharacterControls.Move.started += OnMovementInput;
         _playerInput.CharacterControls.Move.canceled += OnMovementInput;
@@ -130,12 +137,19 @@ public class MovementController : MonoBehaviour
         if (_characterController.isGrounded)
         {
             _currMovement.y = _groundedGravity;
+            if (_timeFalling > 0.6f)
+            {
+                _damage = true;
+            }
+            _timeFalling = 0f;
+            rotateScript.AllowRotation();
         } else if (isFalling)
         {
             float prevYVelocity = _currMovement.y;
             float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
             float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
             _currMovement.y = nextYVelocity;
+            _timeFalling += Time.deltaTime;
             
         }
         else
@@ -145,49 +159,6 @@ public class MovementController : MonoBehaviour
             float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
             _currMovement.y = nextYVelocity;
         }
-        
-        // bool isFalling =  _currMovement.y <= 0.0f || !_isJumping;
-        // float fallMult = 2.0f;
-        //
-        // float distToMoveDown = 9.81f * Time.deltaTime;
-        // RaycastHit hit;
-        // Vector3 origin = transform.position -
-        //                  new Vector3(0, _characterController.center.y + _characterController.height + .2f, 0);
-        // _isGrounded = Physics.Raycast(origin, Vector3.down, out hit, _playerCollider.bounds.extents.y,
-        //     LayerMask.GetMask(("Floor")));
-        // if (_isGrounded) 
-        // {
-        //     distToMoveDown = hit.distance;
-        //     _characterController.Move(new Vector3(0, -distToMoveDown, 0));
-        //     Debug.Log("isGrounded");
-        // } else if (isFalling)
-        // {
-        //     float prevYVelocity = _currMovement.y;
-        //     float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
-        //     float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
-        //     _currMovement.y = nextYVelocity;
-        //     Debug.Log("isFalling");
-        // }
-        // else
-        // {
-        //     float prevYVelocity = _currMovement.y;
-        //     float newYVelocity = _currMovement.y + (_gravity * Time.deltaTime);
-        //     float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
-        //     _currMovement.y = nextYVelocity;
-        // }
-        
-        //
-        //
-        // if (_characterController.isGrounded)
-        // {
-        //     _currMovement.y = _groundedGravity;
-        // } else if (_isFalling)
-        // {
-        //     float prevYVelocity = _currMovement.y;
-        //     float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
-        //     float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
-        //     _currMovement.y = nextYVelocity;
-        // }
     }
 
     void handleAnimation()
@@ -271,6 +242,15 @@ public class MovementController : MonoBehaviour
         {
             //handleRotateLevel();
             _animator.enabled = false;
+        }
+        if (_damage)
+        {
+            _playerHealth.DecreaseHealth(1);
+            _damage = false;
+        }
+        if (!_characterController.isGrounded)
+        {
+            rotateScript.SetRotationInput();
         }
     }
 
