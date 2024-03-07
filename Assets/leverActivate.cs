@@ -12,6 +12,7 @@ public class leverActivate : MonoBehaviour
     public float gateOpenSpeed = 2f; // Adjust as needed
     public Color detectionColor = Color.yellow; // Color when in detection range
     public Color originalColor = Color.white; // Color when not in detection range
+    public GameObject activateAfter;
 
     private bool isLeverActivated = false;
     private Vector3 initialGatePosition;
@@ -68,6 +69,11 @@ public class leverActivate : MonoBehaviour
 
         // Lever is now activated
         isLeverActivated = true;
+        
+        if (activateAfter != null) // activate dialogue about the gate
+        {
+            activateAfter.SetActive(true);
+        }
     }
 
     private IEnumerator RotateLeverSmoothly(float targetAngle)
