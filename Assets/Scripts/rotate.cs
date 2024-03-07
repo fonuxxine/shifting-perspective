@@ -106,6 +106,8 @@ public class rotate : MonoBehaviour
         rotateX = 0f;
         stationaryPlatform = true;
         objectTransform.rotation = endRotation; // Ensure the final rotation is set
+        
+        // Debug.Log("RotateVerti complete");
     }
 
 
@@ -185,14 +187,25 @@ public class rotate : MonoBehaviour
     // reset the rotation of the level to the base rotation for this portion of the stage
     public IEnumerator ResetRotation()
     {
-        cameraScript.ResetRotation(baseAngles);
+        
         
         // Debug.Log("Current Angle X: " + currentXAngle);
         // Debug.Log("Target Angle X: " + (baseAngles.eulerAngles.z));
+        if (!ext)
+        {
+            cameraScript.ResetRotation(baseAngles.eulerAngles.y - 180);
+            float diff = Mathf.DeltaAngle(currentXAngle, (baseAngles.eulerAngles.z >= 0 && baseAngles.eulerAngles.z <= 1) ? 0 : baseAngles.eulerAngles.z);
+            float duration = diff == 0 ? 0 : 0.75f;
+            AllowRotation();
+            yield return StartCoroutine(RotateVerti(diff, duration:duration));
+        }
+        else
+        {
+            cameraScript.ResetRotation(baseAngles.eulerAngles.y + 90);
+        }
         
-        float diff = Mathf.DeltaAngle(currentXAngle, (baseAngles.eulerAngles.z >= 0 && baseAngles.eulerAngles.z <= 1) ? 0 : baseAngles.eulerAngles.z);
-        float duration = diff == 0 ? 0 : 0.75f;
-        yield return StartCoroutine(RotateVerti(diff, duration:duration));
+        // Debug.Log("ResetRotation complete");
+        
     }
     
     // set rotation input to 0 if character is not grounded

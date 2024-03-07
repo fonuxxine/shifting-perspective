@@ -96,11 +96,11 @@ public class cameraRotate : MonoBehaviour
         // }
     }
     
-    public void ResetRotation(Quaternion baseAngles)
+    public void ResetRotation(float baseYAngle)
     {
         // Debug.Log("Current Angle Y: " + currentYAngle);
         // Debug.Log("Target Angle Y: " + (baseAngles.eulerAngles.y - 180)); // TODO add parameter to CheckpointHit for this 180 modifier
-        float diff = Mathf.DeltaAngle(currentYAngle, baseAngles.eulerAngles.y - 180);
+        float diff = Mathf.DeltaAngle(currentYAngle, baseYAngle);
         // Debug.Log("Calculated Diff: " + diff);
 
         float duration = diff == 0 ? 0 : 0.75f;

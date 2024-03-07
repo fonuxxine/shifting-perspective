@@ -88,6 +88,6 @@ public class rotateExt : MonoBehaviour
     // reset the rotation of the level to the base rotation for this portion of the stage
     public void ResetRotation()
     {
-        cameraScript.ResetRotation(baseAngles);
+        cameraScript.ResetRotation(baseAngles.eulerAngles.y);
     }
 }

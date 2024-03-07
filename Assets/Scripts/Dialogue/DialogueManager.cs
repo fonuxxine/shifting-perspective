@@ -55,7 +55,23 @@ public class DialogueManager : MonoBehaviour
             timeElapsed = 0f;
             if (textComponent.text.Length < lines[index].Length)
             {
-                textComponent.text += lines[index][textComponent.text.Length];
+                char nextChar = lines[index][textComponent.text.Length];
+
+                if (nextChar == '<') // do not split up a style tag i.e. <sprite index=1>
+                {
+                    int endIndex = lines[index].IndexOf('>', textComponent.text.Length+1);
+                    if (endIndex != -1)
+                    {
+                        textComponent.text += lines[index].Substring(textComponent.text.Length, endIndex - textComponent.text.Length + 2);
+                    } else
+                    {
+                        textComponent.text += nextChar;
+                    }
+                }
+                else
+                {
+                    textComponent.text += nextChar;
+                }
             }
             else
             {
