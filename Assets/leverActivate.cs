@@ -18,6 +18,7 @@ public class leverActivate : MonoBehaviour
     private Vector3 initialGatePosition;
     private Quaternion originalLeverRotation;
     private Material leverMaterial;
+    public GameObject killzones;
 
     private void Start()
     {
@@ -73,6 +74,7 @@ public class leverActivate : MonoBehaviour
         if (activateAfter != null) // activate dialogue about the gate
         {
             activateAfter.SetActive(true);
+            killzones.SetActive(false);
         }
     }
 
