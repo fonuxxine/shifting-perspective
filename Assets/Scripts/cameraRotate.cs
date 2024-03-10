@@ -18,7 +18,6 @@ public class cameraRotate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentRotationState = rotationStates.faceFront;
         objectTransform = gameObject.GetComponent<Transform>();
         currentYAngle = objectTransform.rotation.eulerAngles.y;
         currentXAngle = objectTransform.rotation.eulerAngles.x;
@@ -70,8 +69,6 @@ public class cameraRotate : MonoBehaviour
     
     void updateRotationState(float rotAngle)
     {
-        print("Now Rotation State: " + currentRotationState.ToString());
-
         // map the currentRotationState enum to an integer
         int currentStateValue = (int) currentRotationState;
 
