@@ -53,6 +53,9 @@ public class CheckpointHit : MonoBehaviour
                         // make the RespawnPoint a child of the checkpoint at the position of RespawnPlaceholder
                         MakeRespawnPointChild(hitCollider.gameObject);
 
+                        // activate the child checkpoint flame & sound
+                        ActivateChildCheckpointFlame(hitCollider.gameObject);
+                        
                         // update the base rotation of the level (for re-rotation after respawn)
                         rotate rotationScript = GetComponentInParent<rotate>();
                         rotationScript.UpdateBaseAngles(respawnPoint.transform.localRotation);
@@ -107,7 +110,6 @@ public class CheckpointHit : MonoBehaviour
                 respawnPoint.transform.parent = checkpoint.transform;
                 respawnPoint.transform.SetLocalPositionAndRotation(respawnPlaceholder.localPosition, respawnPlaceholder.localRotation);
                 // respawnPoint.transform.SetPositionAndRotation(respawnPlaceholder.position, respawnPlaceholder.rotation);
-
             }
             else
             {
@@ -119,5 +121,18 @@ public class CheckpointHit : MonoBehaviour
             Debug.LogError("RespawnPoint object is not assigned to checkpoint!");
         }
     }
-
+    
+    // activate the child checkpoint flame
+    private void ActivateChildCheckpointFlame(GameObject checkpoint)
+    {
+        Transform childCheckpointFlame = checkpoint.transform.Find("CheckpointFlame");
+        if (childCheckpointFlame != null)
+        {
+            childCheckpointFlame.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("No CheckpointFlame found as child of the checkpoint!");
+        }
+    }
 }
