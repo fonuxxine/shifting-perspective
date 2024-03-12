@@ -10707,7 +10707,7 @@ MonoBehaviour:
   lines:
   - Hey look, we're almost there!
   - What are you standing around for? Come on!
-  - You didn't forget how to move, did you? Use WASD to move around.
+  - You didn't forget how to move, did you? Use WASD and SPACE to move around.
   textSpeed: 0.12
   activateAfter: {fileID: 1343722041}
 --- !u!1 &433385300
