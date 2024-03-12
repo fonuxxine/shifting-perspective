@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ExtLevel.unity
     guid: e5b6a5fdf31794688af2cd58942f6488
   - enabled: 1
+    path: Assets/Scenes/IntTutLevel.unity
+    guid: b1af628e2163e43169b4e77d938f89fd
+  - enabled: 1
     path: Assets/Scenes/IntLevel1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
