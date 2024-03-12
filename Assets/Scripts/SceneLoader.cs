@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public enum SceneID {
     MainMenu,
     ExtLevel,
+    IntTutLevel,
     IntLevel1,
     ToBeContinued
 }

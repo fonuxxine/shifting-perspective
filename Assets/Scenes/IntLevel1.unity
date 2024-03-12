@@ -113241,8 +113241,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6486057685909194058, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_text
-      value: Now we are in the castle, use the UP and DOWN arrow keys to do more
-        magic!
+      value: 'Remember: use Up/Down/Left/Right arrows to make it through the castle!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486057685909194058, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
+      propertyPath: m_fontSize
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486057685909194058, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 6694188681876406683, guid: 22aeaf84a9acebf49ad8bd98c6c52a05, type: 3}
       propertyPath: m_Name
