@@ -71321,38 +71321,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1089827184 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5692708855622430486, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
-  m_PrefabInstance: {fileID: 2025836230}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1089827185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
   m_PrefabInstance: {fileID: 2025836230}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1089827189
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089827184}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5987298836007149397, guid: a230f541a643e1643a09942c644a35c2, type: 3}
 --- !u!1 &1160541420 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3231995421242140685, guid: 858079f333eb140bdad2401df23e9958, type: 3}
@@ -113040,10 +113013,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5323831032932835056, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5692708855622430486, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_Name
       value: Checkpoint1
@@ -113089,10 +113058,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6003783422086570930, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 577527131}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5692708855622430486, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1089827189}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
 --- !u!1 &2036688449 stripped
 GameObject:

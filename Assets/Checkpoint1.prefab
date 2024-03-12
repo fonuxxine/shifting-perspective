@@ -5025,6 +5025,7 @@ GameObject:
   - component: {fileID: 8762944652652485441}
   - component: {fileID: 8650435197067310193}
   - component: {fileID: 5323831032932835056}
+  - component: {fileID: 152599875233511111}
   m_Layer: 0
   m_Name: Checkpoint1
   m_TagString: Untagged
@@ -5116,10 +5117,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.024768805, y: 0.054864556, z: 0.116714105}
   m_Center: {x: -0.00000002933666, y: 0.016534831, z: -0.026709396}
+--- !u!64 &152599875233511111
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5692708855622430486}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5987298836007149397, guid: a230f541a643e1643a09942c644a35c2, type: 3}
 --- !u!1 &8572154311740268255
 GameObject:
   m_ObjectHideFlags: 0
