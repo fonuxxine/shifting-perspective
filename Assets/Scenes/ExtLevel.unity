@@ -10938,9 +10938,8 @@ MonoBehaviour:
   textComponent: {fileID: 1790355930}
   lines:
   - Hmm, looks like the gate's locked.
-  - I saw a lever up on the wall, maybe you could use it to open the gate!
-  - But how will you get up there? Maybe there's a way to scale the wall?
-  - I'll try looking around.
+  - I saw a lever up on the wall, maybe it opens the gate!
+  - I'll try looking around for a way up.
   textSpeed: 0.08
   activateAfter: {fileID: 921700515}
 --- !u!114 &518263333
