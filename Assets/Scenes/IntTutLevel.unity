@@ -12083,10 +12083,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1675399803}
   lines:
-  - We made it into the castle!
-  - Now you also can use your magic via <sprite index=3> / <sprite index=0> to manipulate
-    the level.
-  textSpeed: 0.12
+  - We're inside! You can use <sprite index=3> / <sprite index=0> to manipulate the
+    castle.
+  textSpeed: 0.08
   activateAfter: {fileID: 0}
 --- !u!114 &1223049966
 MonoBehaviour:
