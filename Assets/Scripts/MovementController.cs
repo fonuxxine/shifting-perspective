@@ -26,6 +26,9 @@ public class MovementController : MonoBehaviour
     private bool _isJumping;
     private float _lastGroundedTime;
     
+    private float _coyoteTime = .2f;
+    private float _onGround = float.MinValue;
+    
     // handle fall damage
     private float _timeFalling = 0f;
     private bool _damage = false;
@@ -118,11 +121,12 @@ public class MovementController : MonoBehaviour
 
     void HandleJump()
     {
-        if (!_isJumping && _characterController.isGrounded && _isJumpPressed)
+        if (!_isJumping && (_characterController.isGrounded || Time.time - _onGround < _coyoteTime) && _isJumpPressed)
         {
             _isJumping = true;
             _currMovement.y = _initialJumpVelocity * .5f;
             _lastGroundedTime = Time.time;
+            
         }
         else if (!_isJumpPressed && _characterController.isGrounded && _isJumping)
         {
@@ -142,6 +146,7 @@ public class MovementController : MonoBehaviour
                 _damage = true;
             }
             _timeFalling = 0f;
+            _onGround = Time.time;
             rotateScript.AllowRotation();
         } else if (isFalling)
         {
