@@ -13,12 +13,17 @@ public class leverActivate : MonoBehaviour
     public Color detectionColor = Color.yellow; // Color when in detection range
     public Color originalColor = Color.white; // Color when not in detection range
     public GameObject activateAfter;
+    public GameObject killzones;
+    public AudioClip leverSound;
+    public AudioClip gateSound;
 
     private bool isLeverActivated = false;
     private Vector3 initialGatePosition;
     private Quaternion originalLeverRotation;
     private Material leverMaterial;
-    public GameObject killzones;
+    private AudioSource _leverAudioSource;
+    private AudioSource _gateAudioSource;
+    
 
     private void Start()
     {
@@ -35,6 +40,10 @@ public class leverActivate : MonoBehaviour
 
         // Set the initial color of the lever
         SetLeverColor(originalColor);
+
+        _leverAudioSource = GetComponentInChildren<AudioSource>();
+
+        _gateAudioSource = gateTransform.GetComponentInChildren<AudioSource>();
     }
 
     private void Update()
@@ -64,9 +73,16 @@ public class leverActivate : MonoBehaviour
     private void ActivateLever()
     {
         StartCoroutine(RotateLeverSmoothly(leverRotationAngle));
+        if (_leverAudioSource && leverSound) {
+            _leverAudioSource.PlayOneShot(leverSound, 0.25F);
+        }
+
         // Gradually open the gate
         Vector3 targetGatePosition = initialGatePosition + Vector3.up * gateMoveDistance;
         StartCoroutine(OpenGateSmoothly(targetGatePosition));
+        if (_gateAudioSource && gateSound) {
+            _gateAudioSource.PlayOneShot(gateSound, 0.35F);
+        }
 
         // Lever is now activated
         isLeverActivated = true;

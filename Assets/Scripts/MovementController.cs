@@ -28,6 +28,8 @@ public class MovementController : MonoBehaviour
     
     private float _coyoteTime = .2f;
     private float _onGround = float.MinValue;
+    public AudioClip jumpSound;
+    private AudioSource _audioSource;
     
     // handle fall damage
     private float _timeFalling = 0f;
@@ -76,6 +78,8 @@ public class MovementController : MonoBehaviour
         {
             Debug.LogError("Please assign the parent GameObject's name in the Unity Inspector.");
         }
+
+        _audioSource = GetComponentInChildren<AudioSource>();
     }
 
     void JumpVariables()
@@ -126,6 +130,10 @@ public class MovementController : MonoBehaviour
             _isJumping = true;
             _currMovement.y = _initialJumpVelocity * .5f;
             _lastGroundedTime = Time.time;
+
+            if (_audioSource && jumpSound) {
+                _audioSource.PlayOneShot(jumpSound, 0.055F);
+            }
             
         }
         else if (!_isJumpPressed && _characterController.isGrounded && _isJumping)

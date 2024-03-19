@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
                     int endIndex = lines[index].IndexOf('>', textComponent.text.Length+1);
                     if (endIndex != -1)
                     {
-                        textComponent.text += lines[index].Substring(textComponent.text.Length, endIndex - textComponent.text.Length + 2);
+                        textComponent.text += lines[index].Substring(textComponent.text.Length, endIndex - textComponent.text.Length + 1);
                     } else
                     {
                         textComponent.text += nextChar;
