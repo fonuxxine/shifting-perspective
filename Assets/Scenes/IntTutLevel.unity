@@ -11858,6 +11858,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 606758597010578196, guid: ca35c9af75a77498eaa5805879af50ef, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca35c9af75a77498eaa5805879af50ef, type: 3}
       propertyPath: m_Name
       value: TutLevel
@@ -23837,6 +23841,10 @@ PrefabInstance:
       propertyPath: interactionRange
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1626687843475749146, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8555116665811746359, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0036264968
@@ -23897,7 +23905,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorwayTransition
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1626687843475749146, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
