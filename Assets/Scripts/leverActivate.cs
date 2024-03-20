@@ -64,7 +64,7 @@ public class leverActivate : MonoBehaviour
         SetLeverColor(playerInRange ? detectionColor : originalColor);
 
         // Check for player input (e.g., pressing a key or tapping the screen)
-        if ((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) && playerInRange && !isLeverActivated)
+        if (Input.GetButtonDown("Submit") && playerInRange && !isLeverActivated)
         {
             ActivateLever();
         }
