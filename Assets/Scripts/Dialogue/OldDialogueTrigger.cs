@@ -48,7 +48,7 @@ public class OldDialogueTrigger : MonoBehaviour
         _isInRange = Vector3.Distance(_player.position, _npc.position) <= interactionDistance;
 
         // activate dialogue prompt when player presses ENTER and is in range
-        if (_isInRange && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
+        if (_isInRange && (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             ActivateDialogue();
             _hasEnterPrompt = false;

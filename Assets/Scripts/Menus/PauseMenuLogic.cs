@@ -16,7 +16,7 @@ public class PauseMenuLogic : MonoBehaviour
     // update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Cancel"))
         {
             paused = !paused;
             if (paused)
