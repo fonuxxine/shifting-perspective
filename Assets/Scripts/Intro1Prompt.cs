@@ -15,7 +15,7 @@ public class Intro1Prompt : MonoBehaviour
             gameObject.GetComponent<Canvas>().enabled = true;
         }
         if (gameObject.GetComponent<Canvas>().isActiveAndEnabled &&
-            (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
+            (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             SceneManager.LoadScene(sceneName);
         }
