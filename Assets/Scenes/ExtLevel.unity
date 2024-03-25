@@ -154,7 +154,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 659745074}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2835240
 MeshRenderer:
@@ -242,7 +242,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 559457602}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &16284882
 MeshRenderer:
@@ -480,11 +480,6 @@ MeshCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b96e2b13c2e2041b090b2e6dbc4b426e, type: 3}
   m_PrefabInstance: {fileID: 332732531}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &68180713 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 433596424}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &81913003
 GameObject:
@@ -5980,7 +5975,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 421104376}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &172849633
 MeshRenderer:
@@ -6210,7 +6205,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1128861699}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &234845958
 MeshRenderer:
@@ -6321,7 +6316,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1214786234632086641, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1615766461}
   m_SourcePrefab: {fileID: 100100000, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
 --- !u!4 &238376700 stripped
 Transform:
@@ -6364,7 +6362,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 984238674}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &247357698
 MeshRenderer:
@@ -6426,7 +6424,8 @@ GameObject:
   m_Component:
   - component: {fileID: 251198936}
   - component: {fileID: 251198938}
-  - component: {fileID: 251198937}
+  - component: {fileID: 251198940}
+  - component: {fileID: 251198939}
   m_Layer: 5
   m_Name: Enter Key
   m_TagString: Untagged
@@ -6454,7 +6453,15 @@ RectTransform:
   m_AnchoredPosition: {x: 740, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &251198937
+--- !u!222 &251198938
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251198935}
+  m_CullTransparentMesh: 1
+--- !u!114 &251198939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6463,7 +6470,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 251198935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 251198940}
+--- !u!114 &251198940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251198935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -6474,21 +6497,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: da871369813580247842e5972cd7096f, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &251198938
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251198935}
-  m_CullTransparentMesh: 1
+  m_Sprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &258740694
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,7 +6598,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1923506427}
-  m_Father: {fileID: 1399611361}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &258849233
 ParticleSystemRenderer:
@@ -11393,11 +11411,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 46533849b83ef48f199959bf473bbfb5, type: 3}
   m_PrefabInstance: {fileID: 1428535333}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &273956557 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 961056718}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &282133104
 GameObject:
   m_ObjectHideFlags: 0
@@ -12177,7 +12190,8 @@ GameObject:
   m_Component:
   - component: {fileID: 327423687}
   - component: {fileID: 327423689}
-  - component: {fileID: 327423688}
+  - component: {fileID: 327423691}
+  - component: {fileID: 327423690}
   m_Layer: 5
   m_Name: Enter Key
   m_TagString: Untagged
@@ -12205,7 +12219,15 @@ RectTransform:
   m_AnchoredPosition: {x: 740, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &327423688
+--- !u!222 &327423689
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327423686}
+  m_CullTransparentMesh: 1
+--- !u!114 &327423690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12214,7 +12236,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 327423686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 327423691}
+--- !u!114 &327423691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327423686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -12225,21 +12263,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: da871369813580247842e5972cd7096f, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &327423689
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 327423686}
-  m_CullTransparentMesh: 1
+  m_Sprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &332732531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12381,7 +12414,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1739580266}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &350770347
 MeshRenderer:
@@ -12680,19 +12713,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 68180713}
-  - {fileID: 421104376}
-  - {fileID: 1739580266}
-  - {fileID: 559457602}
-  - {fileID: 273956557}
-  - {fileID: 659745074}
-  - {fileID: 1399611361}
-  - {fileID: 984238674}
-  - {fileID: 839894941}
-  - {fileID: 1730473908}
-  - {fileID: 1663908527}
-  - {fileID: 1128861699}
+  m_Children: []
   m_Father: {fileID: 1428535334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &375403436
@@ -12776,7 +12797,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 803834265}
-  m_Father: {fileID: 1730473908}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &404883528
 ParticleSystemRenderer:
@@ -22511,11 +22532,6 @@ MonoBehaviour:
   - Did you forget how to move? Use WASD and SPACE to move around.
   textSpeed: 0.08
   activateAfter: {fileID: 1343722041}
---- !u!4 &421104376 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 477682124}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &433385300
 GameObject:
   m_ObjectHideFlags: 0
@@ -23414,7 +23430,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1749101834}
-  m_Father: {fileID: 273956557}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &510668884
 ParticleSystemRenderer:
@@ -28663,11 +28679,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -72}
   m_SizeDelta: {x: 1400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &559457602 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 85373785}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &594112270
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28988,11 +28999,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658217142}
   m_CullTransparentMesh: 1
---- !u!4 &659745074 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 1191931570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &674791061 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8971160498542615806, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
@@ -29353,7 +29359,8 @@ GameObject:
   m_Component:
   - component: {fileID: 740218308}
   - component: {fileID: 740218310}
-  - component: {fileID: 740218309}
+  - component: {fileID: 740218312}
+  - component: {fileID: 740218311}
   m_Layer: 5
   m_Name: Enter Key
   m_TagString: Untagged
@@ -29381,7 +29388,15 @@ RectTransform:
   m_AnchoredPosition: {x: 740, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &740218309
+--- !u!222 &740218310
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740218307}
+  m_CullTransparentMesh: 1
+--- !u!114 &740218311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29390,7 +29405,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 740218307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 740218312}
+--- !u!114 &740218312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740218307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -29401,21 +29432,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: da871369813580247842e5972cd7096f, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &740218310
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740218307}
-  m_CullTransparentMesh: 1
+  m_Sprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &766851990
 GameObject:
   m_ObjectHideFlags: 0
@@ -29448,7 +29474,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1772394902}
-  m_Father: {fileID: 559457602}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &766851992
 ParticleSystemRenderer:
@@ -34299,6 +34325,7 @@ GameObject:
   - component: {fileID: 792571972}
   - component: {fileID: 792571974}
   - component: {fileID: 792571973}
+  - component: {fileID: 792571975}
   m_Layer: 5
   m_Name: EnterKeyImage
   m_TagString: Untagged
@@ -34363,6 +34390,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792571971}
   m_CullTransparentMesh: 1
+--- !u!114 &792571975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792571971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 792571973}
 --- !u!1 &803834264
 GameObject:
   m_ObjectHideFlags: 0
@@ -34725,11 +34768,6 @@ CanvasRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
   m_PrefabInstance: {fileID: 190210020}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &839894941 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 2008116067}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &849329694
 GameObject:
@@ -35508,7 +35546,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 273956557}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &934866691
 MeshRenderer:
@@ -36107,7 +36145,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 114209372}
-  m_Father: {fileID: 659745074}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &973874479
 ParticleSystemRenderer:
@@ -40915,11 +40953,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!4 &984238674 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 1426233207}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &984664534
 GameObject:
   m_ObjectHideFlags: 0
@@ -40951,7 +40984,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1399611361}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &984664536
 MeshRenderer:
@@ -41189,7 +41222,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1739580266}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1000666456
 MeshRenderer:
@@ -43500,11 +43533,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8108563764783910780, guid: b96e2b13c2e2041b090b2e6dbc4b426e, type: 3}
---- !u!4 &1128861699 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 352970833}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1129701549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4072190758135367640, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
@@ -43687,7 +43715,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 559457602}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1176428004
 MeshRenderer:
@@ -43770,7 +43798,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1663908527}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1182675021
 MeshRenderer:
@@ -44357,6 +44385,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1293915083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1214786234632086641, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+  m_PrefabInstance: {fileID: 5713576623117387863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1293915085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 741777001608859250, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+  m_PrefabInstance: {fileID: 5713576623117387863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293915083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1293915087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293915083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 1293915085}
 --- !u!1 &1314998336 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3543536342704401788, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
@@ -44415,7 +44475,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 839894941}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1322571478
 MeshRenderer:
@@ -44607,7 +44667,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 81913004}
-  m_Father: {fileID: 839894941}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1347613845
 ParticleSystemRenderer:
@@ -49630,7 +49690,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1644512071}
-  m_Father: {fileID: 1739580266}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1388606251
 ParticleSystemRenderer:
@@ -54438,11 +54498,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!4 &1399611361 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 1917979329}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1423564317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55921,7 +55976,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1636887240}
-  m_Father: {fileID: 1663908527}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1521061473
 ParticleSystemRenderer:
@@ -61009,6 +61064,38 @@ Transform:
   - {fileID: 939449894}
   m_Father: {fileID: 1428535334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1615766457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1214786234632086641, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+  m_PrefabInstance: {fileID: 238376699}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1615766459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 741777001608859250, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+  m_PrefabInstance: {fileID: 238376699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615766457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1615766461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615766457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 1615766459}
 --- !u!1 &1636887239
 GameObject:
   m_ObjectHideFlags: 0
@@ -61245,11 +61332,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!4 &1663908527 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 319514508}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1673208883
 GameObject:
   m_ObjectHideFlags: 0
@@ -61571,7 +61653,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1048760667}
-  m_Father: {fileID: 1128861699}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1693370881
 ParticleSystemRenderer:
@@ -66586,11 +66668,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 687141202}
   m_SourcePrefab: {fileID: 100100000, guid: b96e2b13c2e2041b090b2e6dbc4b426e, type: 3}
---- !u!4 &1730473908 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 1828123170}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1731299675
 GameObject:
   m_ObjectHideFlags: 0
@@ -71421,11 +71498,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!4 &1739580266 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
-  m_PrefabInstance: {fileID: 1184280418}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1749101833
 GameObject:
   m_ObjectHideFlags: 0
@@ -71859,7 +71931,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 479095758}
-  m_Father: {fileID: 421104376}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1816027068
 ParticleSystemRenderer:
@@ -76908,7 +76980,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1851632371}
   - component: {fileID: 1851632373}
-  - component: {fileID: 1851632372}
+  - component: {fileID: 1851632375}
+  - component: {fileID: 1851632374}
   m_Layer: 5
   m_Name: Enter Key
   m_TagString: Untagged
@@ -76936,7 +77009,15 @@ RectTransform:
   m_AnchoredPosition: {x: 740, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1851632372
+--- !u!222 &1851632373
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851632370}
+  m_CullTransparentMesh: 1
+--- !u!114 &1851632374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76945,7 +77026,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1851632370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 1851632375}
+--- !u!114 &1851632375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851632370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -76956,21 +77053,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: da871369813580247842e5972cd7096f, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1851632373
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851632370}
-  m_CullTransparentMesh: 1
+  m_Sprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!4 &1862003512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
@@ -77074,7 +77166,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 296650470}
-  m_Father: {fileID: 68180713}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1884067472
 ParticleSystemRenderer:
@@ -82937,7 +83029,7 @@ Transform:
   m_LocalScale: {x: 0.06690181, y: 0.5392288, z: 1.8158174}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1730473908}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2026340959
 MeshRenderer:
@@ -83021,7 +83113,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 287390144}
-  m_Father: {fileID: 984238674}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &2032873275
 ParticleSystemRenderer:
@@ -93939,7 +94031,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1214786234632086641, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1293915087}
   m_SourcePrefab: {fileID: 100100000, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
 --- !u!4 &6223356489252284338
 Transform:
@@ -94132,6 +94227,7 @@ GameObject:
   - component: {fileID: 6460498394281832502}
   - component: {fileID: 3141868119226514551}
   - component: {fileID: 8951916535808621776}
+  - component: {fileID: 8951916535808621777}
   m_Layer: 5
   m_Name: EnterKeyImage
   m_TagString: Untagged
@@ -94150,6 +94246,7 @@ GameObject:
   - component: {fileID: 6460498393613496720}
   - component: {fileID: 3141868118291840465}
   - component: {fileID: 8951916535134780790}
+  - component: {fileID: 8951916535134780791}
   m_Layer: 5
   m_Name: EnterKeyImage
   m_TagString: Untagged
@@ -94187,6 +94284,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8951916535134780791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873955318517963934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 8951916535134780790}
 --- !u!114 &8951916535808621776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94217,6 +94330,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8951916535808621777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873955318122257720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 8951916535808621776}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -94232,3 +94361,28 @@ SceneRoots:
   - {fileID: 692066021}
   - {fileID: 854030874}
   - {fileID: 489444810}
+  - {fileID: 2835239}
+  - {fileID: 16284881}
+  - {fileID: 172849632}
+  - {fileID: 234845957}
+  - {fileID: 247357697}
+  - {fileID: 258849232}
+  - {fileID: 350770346}
+  - {fileID: 404883527}
+  - {fileID: 510668883}
+  - {fileID: 766851991}
+  - {fileID: 934866690}
+  - {fileID: 973874478}
+  - {fileID: 984664535}
+  - {fileID: 1000666455}
+  - {fileID: 1176428003}
+  - {fileID: 1182675020}
+  - {fileID: 1322571477}
+  - {fileID: 1347613844}
+  - {fileID: 1388606250}
+  - {fileID: 1521061472}
+  - {fileID: 1693370880}
+  - {fileID: 1816027067}
+  - {fileID: 1884067471}
+  - {fileID: 2026340958}
+  - {fileID: 2032873274}
