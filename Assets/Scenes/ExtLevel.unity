@@ -6474,7 +6474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 251198940}
 --- !u!114 &251198940
@@ -12240,7 +12240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 327423691}
 --- !u!114 &327423691
@@ -29409,7 +29409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 740218312}
 --- !u!114 &740218312
@@ -34403,7 +34403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 792571973}
 --- !u!1 &803834264
@@ -44414,7 +44414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 1293915085}
 --- !u!1 &1314998336 stripped
@@ -61093,7 +61093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 1615766459}
 --- !u!1 &1636887239
@@ -77030,7 +77030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 1851632375}
 --- !u!114 &1851632375
@@ -94297,7 +94297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 8951916535134780790}
 --- !u!114 &8951916535808621776
@@ -94343,7 +94343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: e1b76cf5752744f4abdfcb8dbadcfd8e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 8951916535808621776}
 --- !u!1660057539 &9223372036854775807
