@@ -256,11 +256,11 @@ public class MovementController : MonoBehaviour
             //handleRotateLevel();
             _animator.enabled = false;
         }
-        if (_damage)
-        {
-            _playerHealth.DecreaseHealth(1);
-            _damage = false;
-        }
+        // if (_damage)
+        // {
+        //     _playerHealth.DecreaseHealth(1);
+        //     _damage = false;
+        // }
         // if (!_characterController.isGrounded)
         // {
         //     rotateScript.SetRotationInput();
