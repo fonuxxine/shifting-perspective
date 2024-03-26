@@ -110779,6 +110779,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1808897267}
     m_Modifications:
+    - target: {fileID: 62464439899955657, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: imageToChange
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -116279,13 +116283,48 @@ PrefabInstance:
     - {fileID: 1626687843475749146, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1214786234632086641, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6042372642663037906}
   m_SourcePrefab: {fileID: 100100000, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
 --- !u!4 &6042372642663037903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8555116665811746359, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
   m_PrefabInstance: {fileID: 6042372642663037902}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6042372642663037904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1214786234632086641, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+  m_PrefabInstance: {fileID: 6042372642663037902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6042372642663037905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 741777001608859250, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+  m_PrefabInstance: {fileID: 6042372642663037902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042372642663037904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6042372642663037906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042372642663037904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 6042372642663037905}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
