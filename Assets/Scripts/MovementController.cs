@@ -132,7 +132,7 @@ public class MovementController : MonoBehaviour
             _lastGroundedTime = Time.time;
 
             if (_audioSource && jumpSound) {
-                _audioSource.PlayOneShot(jumpSound, 0.055F);
+                _audioSource.PlayOneShot(jumpSound, 0.045F);
             }
             
         }
