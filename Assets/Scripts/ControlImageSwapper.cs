@@ -11,13 +11,17 @@ public class ControlImageSwapper : MonoBehaviour
     public Sprite xboxSprite;
     public Image imageToChange;
 
-    private enum ControllerType { Keyboard, PlayStation, Xbox }
+    public enum ControllerType { Keyboard, PlayStation, Xbox }
     private ControllerType _currentControllerType;
 
     private void Start()
     {
-        UpdateControllerType();
-        UpdateObjectAccordingToController();
+        _currentControllerType = GetControllerType();
+        
+        if (imageToChange)
+        {
+            UpdateObjectAccordingToController();
+        }
     }
 
     private void UpdateObjectAccordingToController()
@@ -42,7 +46,7 @@ public class ControlImageSwapper : MonoBehaviour
         }
     }
 
-    private void UpdateControllerType()
+    public static ControllerType GetControllerType()
     {
         foreach (InputDevice inputDevice in InputSystem.devices)
         {
@@ -53,25 +57,22 @@ public class ControlImageSwapper : MonoBehaviour
                 if (gamepad is XInputController)
                 {
                     // Debug.Log("it is a xbox");
-                    _currentControllerType = ControllerType.Xbox;
-                    return;
+                    return ControllerType.Xbox;
                 }
                 else if (gamepad is DualShockGamepad)
                 {
                     // Debug.Log("it is a ps");
-                    _currentControllerType = ControllerType.PlayStation;
-                    return;
+                    return ControllerType.PlayStation;
                 }
                 else
                 {
                     // Debug.Log("it is a other");
                     // Debug.Log(gamepad.device.name);
-                    _currentControllerType = ControllerType.PlayStation;
-                    return;
+                    return ControllerType.PlayStation;
                 }
             }
         }
         // Debug.Log("it is a default");
-        _currentControllerType = ControllerType.Keyboard;
+        return ControllerType.Keyboard;
     }
 }

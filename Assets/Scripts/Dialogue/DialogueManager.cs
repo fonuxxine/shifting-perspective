@@ -13,9 +13,12 @@ public class DialogueManager : MonoBehaviour
     private float timeElapsed;
     private bool typing;
 
+    private ControlImageSwapper.ControllerType _controllerType;
+
     // Start is called before the first frame update
     void Start()
     {
+        _controllerType = ControlImageSwapper.GetControllerType();
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -62,7 +65,18 @@ public class DialogueManager : MonoBehaviour
                     int endIndex = lines[index].IndexOf('>', textComponent.text.Length+1);
                     if (endIndex != -1)
                     {
-                        textComponent.text += lines[index].Substring(textComponent.text.Length, endIndex - textComponent.text.Length + 1);
+                        var substr = lines[index].Substring(textComponent.text.Length, endIndex - textComponent.text.Length + 1);
+                        if (_controllerType == ControlImageSwapper.ControllerType.Keyboard)
+                        {
+                            textComponent.text += substr;
+                        }
+                        else // convert to Controller icons if required
+                        {
+                            var substr_modified = substr.Replace("KBM", "Con");
+                            textComponent.text += substr_modified;
+                            // update lines[index] with new substring
+                            lines[index] = lines[index].Remove(textComponent.text.Length - substr.Length, substr.Length).Insert(textComponent.text.Length - substr.Length, substr_modified);
+                        }
                     } else
                     {
                         textComponent.text += nextChar;
