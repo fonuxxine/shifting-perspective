@@ -498,6 +498,7 @@ GameObject:
   - component: {fileID: 769293853}
   - component: {fileID: 769293855}
   - component: {fileID: 769293854}
+  - component: {fileID: 769293856}
   m_Layer: 5
   m_Name: LeftArrowImage
   m_TagString: Untagged
@@ -562,6 +563,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769293852}
   m_CullTransparentMesh: 1
+--- !u!114 &769293856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769293852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: 7e7dac53c93d36c4f8c3577356557a98, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 46a769d1d94f257409e4314b9a7830cf, type: 3}
+  xboxSprite: {fileID: 21300000, guid: 46a769d1d94f257409e4314b9a7830cf, type: 3}
+  imageToChange: {fileID: 769293854}
 --- !u!1 &798627995
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1016,7 @@ GameObject:
   - component: {fileID: 1724468985}
   - component: {fileID: 1724468987}
   - component: {fileID: 1724468986}
+  - component: {fileID: 1724468988}
   m_Layer: 5
   m_Name: RightArrowImage
   m_TagString: Untagged
@@ -1063,6 +1081,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724468984}
   m_CullTransparentMesh: 1
+--- !u!114 &1724468988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724468984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: 48a5201e6b4d16f449ea0ac07f7c5051, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 28efae039a3aa814db7c8a4356f5e6bb, type: 3}
+  xboxSprite: {fileID: 21300000, guid: 28efae039a3aa814db7c8a4356f5e6bb, type: 3}
+  imageToChange: {fileID: 1724468986}
 --- !u!1 &1737294944
 GameObject:
   m_ObjectHideFlags: 0

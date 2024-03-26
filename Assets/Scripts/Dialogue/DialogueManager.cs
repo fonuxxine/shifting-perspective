@@ -96,6 +96,11 @@ public class DialogueManager : MonoBehaviour
 
     void StopTyping()
     {
+        if (_controllerType != ControlImageSwapper.ControllerType.Keyboard)
+        {
+            lines[index] = lines[index].Replace("KBM\">", "Con\">");
+        }
+        
         textComponent.text = lines[index];
         typing = false;
     }
