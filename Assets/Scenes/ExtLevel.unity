@@ -12998,10 +12998,8 @@ MonoBehaviour:
   leverRotationAngle: -90
   leverRotateSpeed: 1
   gateOpenSpeed: 0.365
-  detectionColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  originalColor: {r: 1, g: 1, b: 1, a: 1}
+  enterKey: {fileID: 393533913}
   activateAfter: {fileID: 1201158872}
-  deactivateAfter: {fileID: 2054256793}
   killzones: {fileID: 1589669960}
   leverSound: {fileID: 8300000, guid: 8e9a44e24341ef547a237b7ed362d6cc, type: 3}
   gateSound: {fileID: 8300000, guid: a68c3f18644373d498959138cc14626e, type: 3}
@@ -91824,10 +91822,8 @@ MonoBehaviour:
   leverRotationAngle: -90
   leverRotateSpeed: 1
   gateOpenSpeed: 0.365
-  detectionColor: {r: 0.24563903, g: 0.69838387, b: 0.754717, a: 1}
-  originalColor: {r: 0.15294118, g: 0.21176472, b: 0.8705883, a: 1}
+  enterKey: {fileID: 0}
   activateAfter: {fileID: 1201158872}
-  deactivateAfter: {fileID: 0}
   killzones: {fileID: 1589669960}
   leverSound: {fileID: 8300000, guid: 8e9a44e24341ef547a237b7ed362d6cc, type: 3}
   gateSound: {fileID: 8300000, guid: a68c3f18644373d498959138cc14626e, type: 3}
