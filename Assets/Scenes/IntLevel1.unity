@@ -48686,7 +48686,7 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: a58f6b656677781478e9c25f0dba6644, type: 2}
   yellowMaterial: {fileID: 2100000, guid: 201c2fc6a6ff362429ff3c3054eb3166, type: 2}
   respawnPoint: {fileID: 1399612065}
-  detectionRadius: 1
+  detectionRadius: 2.5
 --- !u!136 &728994202
 CapsuleCollider:
   m_ObjectHideFlags: 0
