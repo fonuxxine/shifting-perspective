@@ -34866,8 +34866,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
-  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 55477ee880cbed347abefee27aedd45f, type: 3}
+  xboxSprite: {fileID: 21300000, guid: db487996d03d588489af2ed9d9addafe, type: 3}
   imageToChange: {fileID: 792571973}
 --- !u!1 &803834264
 GameObject:
@@ -45846,38 +45846,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1293915083 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1214786234632086641, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
-  m_PrefabInstance: {fileID: 5713576623117387863}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1293915085 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741777001608859250, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
-  m_PrefabInstance: {fileID: 5713576623117387863}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1293915083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1293915087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1293915083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
-  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
-  imageToChange: {fileID: 1293915085}
 --- !u!4 &1313886528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e420b62135fe4a229756a6020cf92ec, type: 3}
@@ -69435,8 +69403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
-  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 55477ee880cbed347abefee27aedd45f, type: 3}
+  xboxSprite: {fileID: 21300000, guid: db487996d03d588489af2ed9d9addafe, type: 3}
   imageToChange: {fileID: 1726827359}
 --- !u!114 &1726827359
 MonoBehaviour:
@@ -97211,6 +97179,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892391031}
     m_Modifications:
+    - target: {fileID: 91353761120364129, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
+      propertyPath: playstationSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55477ee880cbed347abefee27aedd45f, type: 3}
     - target: {fileID: 915981495191636340, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
       propertyPath: sceneName
       value: IntTutLevel
@@ -97262,10 +97234,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1214786234632086641, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1293915087}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dec9a2bed1515724dae605a724ff4798, type: 3}
 --- !u!4 &6223356489252284338
 Transform:
@@ -97528,8 +97497,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
-  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 55477ee880cbed347abefee27aedd45f, type: 3}
+  xboxSprite: {fileID: 21300000, guid: db487996d03d588489af2ed9d9addafe, type: 3}
   imageToChange: {fileID: 8951916535134780790}
 --- !u!114 &8951916535808621776
 MonoBehaviour:
@@ -97574,8 +97543,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
-  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 55477ee880cbed347abefee27aedd45f, type: 3}
+  xboxSprite: {fileID: 21300000, guid: db487996d03d588489af2ed9d9addafe, type: 3}
   imageToChange: {fileID: 8951916535808621776}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

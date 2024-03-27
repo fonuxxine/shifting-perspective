@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
-  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 55477ee880cbed347abefee27aedd45f, type: 3}
+  xboxSprite: {fileID: 21300000, guid: db487996d03d588489af2ed9d9addafe, type: 3}
   imageToChange: {fileID: 2446042985388555547}
 --- !u!1 &1405050505889370470
 GameObject:
