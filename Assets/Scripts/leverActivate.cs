@@ -12,6 +12,7 @@ public class leverActivate : MonoBehaviour
     public float gateOpenSpeed = 2f; // Adjust as needed
     public GameObject enterKey;
     public GameObject activateAfter;
+    public GameObject deactivateAfter;
     public GameObject killzones;
     public AudioClip leverSound;
     public AudioClip gateSound;
@@ -92,10 +93,15 @@ public class leverActivate : MonoBehaviour
         // Lever is now activated
         isLeverActivated = true;
         
-        if (activateAfter != null) // activate dialogue about the gate
+        if (activateAfter) // activate dialogue about the gate
         {
             activateAfter.SetActive(true);
             killzones.SetActive(false);
+        }
+
+        if (deactivateAfter)
+        {
+            deactivateAfter.SetActive(false);
         }
     }
 
