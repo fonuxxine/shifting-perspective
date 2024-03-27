@@ -10,10 +10,8 @@ public class leverActivate : MonoBehaviour
     public float leverRotationAngle = -90f; // Adjust as needed
     public float leverRotateSpeed = 2f; // Adjust as needed
     public float gateOpenSpeed = 2f; // Adjust as needed
-    public Color detectionColor = Color.yellow; // Color when in detection range
-    public Color originalColor = Color.white; // Color when not in detection range
+    public GameObject enterKey;
     public GameObject activateAfter;
-    public GameObject deactivateAfter;
     public GameObject killzones;
     public AudioClip leverSound;
     public AudioClip gateSound;
@@ -40,7 +38,7 @@ public class leverActivate : MonoBehaviour
         }
 
         // Set the initial color of the lever
-        SetLeverColor(originalColor);
+        // SetLeverColor(originalColor);
 
         _leverAudioSource = GetComponentInChildren<AudioSource>();
 
@@ -60,9 +58,15 @@ public class leverActivate : MonoBehaviour
                 break;
             }
         }
-
-        // Change the lever color based on player proximity
-        SetLeverColor(playerInRange ? detectionColor : originalColor);
+        
+        if (playerInRange && !isLeverActivated)
+        {
+            enterKey.SetActive(true);
+        }
+        else
+        {
+            enterKey.SetActive(false);
+        }
 
         // Check for player input (e.g., pressing a key or tapping the screen)
         if (Input.GetButtonDown("Submit") && playerInRange && !isLeverActivated)
@@ -88,15 +92,10 @@ public class leverActivate : MonoBehaviour
         // Lever is now activated
         isLeverActivated = true;
         
-        if (activateAfter) // activate dialogue about the gate
+        if (activateAfter != null) // activate dialogue about the gate
         {
             activateAfter.SetActive(true);
             killzones.SetActive(false);
-        }
-
-        if (deactivateAfter) // deactive the ENTER prompt
-        {
-            deactivateAfter.SetActive(false);
         }
     }
 
@@ -130,20 +129,5 @@ public class leverActivate : MonoBehaviour
 
         // Ensure the gate reaches the exact target position
         gateTransform.position = targetPosition;
-    }
-
-    private void SetLeverColor(Color color)
-    {
-        if (leverMaterial != null)
-        {
-            leverMaterial.color = color;
-        }
-    }
-
-    // Visualize the activation range in the scene view
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = detectionColor;
-        Gizmos.DrawWireSphere(transform.position, activationRange);
     }
 }
