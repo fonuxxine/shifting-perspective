@@ -40,11 +40,11 @@ public class CheckpointHit : MonoBehaviour
                     if (checkpointNumber > currentCheckpoint)
                     {
                         // change checkpoint material to green
-                        foreach (var checkpoint in previousCheckpoints)
-                        {
-                            checkpoint.GetComponent<Renderer>().material = yellowMaterial;
-                        }
-                        renderer.material = greenMaterial;
+                        // foreach (var checkpoint in previousCheckpoints)
+                        // {
+                        //     checkpoint.GetComponent<Renderer>().material = yellowMaterial;
+                        // }
+                        // renderer.material = greenMaterial;
                         currentCheckpoint = checkpointNumber;
 
                         // update previously hit checkpoints array
@@ -63,7 +63,7 @@ public class CheckpointHit : MonoBehaviour
                     else if (checkpointNumber < currentCheckpoint)
                     {
                         // change checkpoint material to yellow
-                        renderer.material = yellowMaterial;
+                        // renderer.material = yellowMaterial;
 
                         // update previously hit checkpoints array
                         UpdatePreviousCheckpoints(hitCollider.gameObject);

@@ -13,6 +13,7 @@ public class leverActivate : MonoBehaviour
     public Color detectionColor = Color.yellow; // Color when in detection range
     public Color originalColor = Color.white; // Color when not in detection range
     public GameObject activateAfter;
+    public GameObject deactivateAfter;
     public GameObject killzones;
     public AudioClip leverSound;
     public AudioClip gateSound;
@@ -87,10 +88,15 @@ public class leverActivate : MonoBehaviour
         // Lever is now activated
         isLeverActivated = true;
         
-        if (activateAfter != null) // activate dialogue about the gate
+        if (activateAfter) // activate dialogue about the gate
         {
             activateAfter.SetActive(true);
             killzones.SetActive(false);
+        }
+
+        if (deactivateAfter) // deactive the ENTER prompt
+        {
+            deactivateAfter.SetActive(false);
         }
     }
 
