@@ -10,13 +10,13 @@ public class CameraObstruction : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if the entered object has a renderer
-        Renderer renderer = other.GetComponent<Renderer>();
-        if (renderer != null)
+        if (other.tag == "Untagged")
         {
-            Debug.Log("Entered" + other.name);
-            Debug.Log("Renderer found" + other.name);
-            // Start a coroutine to gradually change the alpha value
-            StartCoroutine(FadeOut(renderer.material));
+            Renderer renderer = other.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                StartCoroutine(FadeOut(renderer.material));
+            }
         }
     }
 
@@ -26,8 +26,6 @@ public class CameraObstruction : MonoBehaviour
         Renderer renderer = other.GetComponent<Renderer>();
         if (renderer != null)
         {
-            // Start a coroutine to gradually change the alpha value
-            Debug.Log("Exited" + other.name);
             StartCoroutine(FadeIn(renderer.material));
         }
     }

@@ -21,12 +21,6 @@ public class rotate : MonoBehaviour
     public bool ext = false;
     // check if character is grounded
     private bool _grounded = true;
-
-    //  // Variables for wall transparency...
-    // public GameObject wall0, wall1, wall2, wall3;
-    // private GameObject currentFacingWall = null;
-    // private Material originalMaterial;
-    // public Material transparentMaterial;
     
     
     // Start is called before the first frame update
@@ -69,25 +63,7 @@ public class rotate : MonoBehaviour
             HandleRotationInput();
         }
         
-        // UpdateWallTransparency();
     }
-
-    // IEnumerator RotateHori(float angle)
-    // {
-    //     float duration = 1f;
-    //     Quaternion startRotation = Quaternion.Euler(currentXAngle, currentYAngle, 0);
-    //     Quaternion endRotation = Quaternion.Euler(currentXAngle, currentYAngle + angle, 0);
-    //     float timePassed = 0f;
-    //     while (timePassed < duration)
-    //     {
-    //         rotationReset = false;
-    //         objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
-    //         timePassed += Time.deltaTime;
-    //         yield return null;
-    //     }
-    //     currentYAngle += angle;
-    //     objectTransform.rotation = endRotation; // Ensure the final rotation is set
-    // }
     
     IEnumerator RotateVerti(float angle, float duration=1f)
     {
@@ -133,21 +109,7 @@ public class rotate : MonoBehaviour
                 rotationReset = true;
             }
         }
-
-        // if (_userRotateYInput != 0)
-        // {
-        //     if (Math.Abs(_userRotateYInput) < 1)
-        //     {
-        //         objectTransform.rotation = Quaternion.Euler(currentXAngle, currentYAngle + _userRotateYInput * 10f, 0);
-        //     } else if (_userRotateYInput == 1)
-        //     {
-        //         currentYAngle += 10f;
-        //         StartCoroutine(RotateHori(80f));
-        //     } else if (_userRotateYInput == -1)
-        //     { 
-        //         currentYAngle -= 10f;
-        //         StartCoroutine(RotateHori(-80f));
-        //     }
+        
         if (!ext)
         {
             if (_userRotateXInput != 0)
@@ -188,9 +150,6 @@ public class rotate : MonoBehaviour
     public IEnumerator ResetRotation()
     {
         
-        
-        // Debug.Log("Current Angle X: " + currentXAngle);
-        // Debug.Log("Target Angle X: " + (baseAngles.eulerAngles.z));
         if (!ext)
         {
             cameraScript.ResetRotation(baseAngles.eulerAngles.y - 180);
@@ -218,52 +177,4 @@ public class rotate : MonoBehaviour
     {
         _grounded = true;
     }
-    
-    // private void UpdateWallTransparency()
-    // {
-    //     GameObject newFacingWall = DetermineFacingWall();
-    //     if (currentFacingWall != newFacingWall)
-    //     {
-    //         // Revert the old wall to the original material
-    //         if (currentFacingWall != null)
-    //         {
-    //             SetWallMaterial(currentFacingWall, originalMaterial);
-    //         }
-    //
-    //         // Update originalMaterial to the new wall's material before making it transparent
-    //         originalMaterial = newFacingWall.GetComponent<Renderer>().material;
-    //
-    //         // Make the new facing wall transparent
-    //         SetWallMaterial(newFacingWall, transparentMaterial);
-    //
-    //         currentFacingWall = newFacingWall;
-    //     }
-    // }
-    //
-    // private GameObject DetermineFacingWall()
-    // {
-    //     Vector3 forward = objectTransform.forward;
-    //     if (Mathf.Abs(forward.z) > Mathf.Abs(forward.x))
-    //     {
-    //         // Facing North or South
-    //         return forward.z > 0 ? wall0 : wall2;
-    //     }
-    //     else
-    //     {
-    //         // Facing East or West
-    //         return forward.x > 0 ? wall3 : wall1;
-    //     }
-    // }
-    //
-    // private void SetWallMaterial(GameObject wall, Material material)
-    // {
-    //     if (wall != null)
-    //     {
-    //         Renderer wallRenderer = wall.GetComponent<Renderer>();
-    //         if (wallRenderer != null)
-    //         {
-    //             wallRenderer.material = material;
-    //         }
-    //     }
-    // }
 }
