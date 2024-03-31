@@ -25,6 +25,7 @@ public class MovementController : MonoBehaviour
     public float _maxJumpTime = 0.75f;
     private bool _isJumping;
     private float _lastGroundedTime;
+    private bool _isFalling = false;
     
     private float _coyoteTime = .2f;
     private float _onGround = float.MinValue;
@@ -42,9 +43,19 @@ public class MovementController : MonoBehaviour
     public string parentGameObjectName;
     private cameraRotate cameraScript;
     public string cameraObjectName;
-    private 
+    private Collider _playerCollider;
     
-    Collider _playerCollider;
+    // handle sound effects
+    private enum TerrainTags
+    {
+        Grass,
+        Stone
+    }
+
+    [SerializeField] private AudioClip[] _footstepAudios;
+    [SerializeField] private AudioClip[] _fallingAudios;
+    private float _footStepTimer;
+    private float _timePerStep = 0.5f;
 
     private void Awake()
     {
@@ -130,7 +141,6 @@ public class MovementController : MonoBehaviour
             _isJumping = true;
             _currMovement.y = _initialJumpVelocity * .5f;
             _lastGroundedTime = Time.time;
-
             if (_audioSource && jumpSound) {
                 _audioSource.PlayOneShot(jumpSound, 0.035F);
             }
@@ -139,12 +149,25 @@ public class MovementController : MonoBehaviour
         else if (!_isJumpPressed && _characterController.isGrounded && _isJumping)
         {
             _isJumping = false; 
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f))
+            {
+                int index = 0;
+                foreach (string tag in Enum.GetNames(typeof(TerrainTags)))
+                {
+                    if (hit.transform.CompareTag(tag))
+                    {
+                        _audioSource.PlayOneShot(_fallingAudios[index], 0.035f);
+                    }
+                    index++;
+                }
+            }
         }
     }
 
     void HandleGravity()
     {
-        bool isFalling = _currMovement.y <= 0.0f || !_isJumpPressed;
+        _isFalling = _currMovement.y <= 0.0f || !_isJumpPressed;
         float fallMult = 2.0f;
         if (_characterController.isGrounded)
         {
@@ -156,14 +179,13 @@ public class MovementController : MonoBehaviour
             _timeFalling = 0f;
             _onGround = Time.time;
             rotateScript.AllowRotation();
-        } else if (isFalling)
+        } else if (_isFalling)
         {
             float prevYVelocity = _currMovement.y;
             float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
             float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
             _currMovement.y = nextYVelocity;
             _timeFalling += Time.deltaTime;
-            
         }
         else
         {
@@ -198,7 +220,7 @@ public class MovementController : MonoBehaviour
             _animator.SetBool("isJumping", false);
         }
 
-        if (Time.time - _lastGroundedTime > _maxJumpTime && Time.time - _lastGroundedTime < _maxJumpTime + 0.2f)
+        if (Time.time - _lastGroundedTime > _maxJumpTime - 0.1f && Time.time - _lastGroundedTime < _maxJumpTime + 0.1f)
         {
             _animator.SetBool("isLanding", true);
         }
@@ -250,6 +272,12 @@ public class MovementController : MonoBehaviour
             HandleGravity();
             HandleJump();
             _characterController.Move(_currMovement * Time.deltaTime);
+            _footStepTimer += Time.deltaTime;
+            if (_isMovementPressed && _footStepTimer > _timePerStep)
+            {
+                GetCollidedTexture();
+                _footStepTimer = 0;
+            }
         }
         else
         {
@@ -265,6 +293,23 @@ public class MovementController : MonoBehaviour
         // {
         //     rotateScript.SetRotationInput();
         // }
+    }
+
+    private void GetCollidedTexture()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f))
+        {
+            int index = 0;
+            foreach (string tag in Enum.GetNames(typeof(TerrainTags)))
+            {
+                if (hit.transform.CompareTag(tag))
+                {
+                    _audioSource.PlayOneShot(_footstepAudios[index], 0.02f);
+                }
+                index++;
+            }
+        }
     }
 
     private void OnEnable()

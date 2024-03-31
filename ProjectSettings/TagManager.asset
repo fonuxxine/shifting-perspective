@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Walls
+  - Stone
+  - Grass
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grass
   - Water
   - UI
   - 
