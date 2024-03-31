@@ -6245,6 +6245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone Path
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ffd7ccfcdd82f4a55b3fef6294535399, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23695,6 +23699,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7906029611043803402, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -6499529959314878404, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -5028763495553518784, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -4968526636644925565, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -3543536342704401788, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -3133498875991405556, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -639994211050551040, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 676749508535066333, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
       propertyPath: m_Name
       value: Castle
@@ -23702,6 +23738,38 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857771654123359699, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594353384575807095, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072190758135367640, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946498498335240262, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999508581848819126, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680555722970494358, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145795834194100340, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971160498542615806, guid: ccb5903bced7946a28746bab9fb60f9f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43970,6 +44038,12 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 2d630aa4fdb498f428770c72b52d1a98, type: 3}
   parentGameObjectName: Level
   cameraObjectName: Virtual Camera
+  _footstepAudios:
+  - {fileID: 8300000, guid: a583078300191404f978d3e1c6a0ccff, type: 3}
+  - {fileID: 8300000, guid: 5ef45075967e946d4a4b8b5a720361be, type: 3}
+  _fallingAudios:
+  - {fileID: 8300000, guid: 436c257c8679941858ca0e1ef679b4c7, type: 3}
+  - {fileID: 8300000, guid: dceaacf9e8ca74564970b244e834d93d, type: 3}
 --- !u!143 &1007809371
 CharacterController:
   m_ObjectHideFlags: 0
@@ -44632,9 +44706,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7781920830043300580, guid: 5372143d458fd4d019574f2cffec72b8, type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: -6238491610419710892, guid: 5372143d458fd4d019574f2cffec72b8, type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: -817925072480010518, guid: 5372143d458fd4d019574f2cffec72b8, type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5372143d458fd4d019574f2cffec72b8, type: 3}
       propertyPath: m_Name
       value: Mountains
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5372143d458fd4d019574f2cffec72b8, type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029419914001338269, guid: 5372143d458fd4d019574f2cffec72b8, type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765366824985428268, guid: 5372143d458fd4d019574f2cffec72b8, type: 3}
+      propertyPath: m_TagString
+      value: Grass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44943,6 +45041,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7bd34a20924d44855aaaf8fa533a4183, type: 3}
       propertyPath: m_Name
       value: Wall Platforms
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7bd34a20924d44855aaaf8fa533a4183, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -63298,7 +63400,7 @@ GameObject:
   - component: {fileID: 1548414088}
   m_Layer: 0
   m_Name: UnderTerrain (1)
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63906,6 +64008,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 892a5c812cce345588c1f7b0c522deea, type: 3}
       propertyPath: m_Name
       value: Rock Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 892a5c812cce345588c1f7b0c522deea, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85187,6 +85293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dbd2d7b08feb5440ebf9ac950b61df5d, type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90892,6 +91002,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 277e140037ea04328b8f50135bb9c68f, type: 3}
       propertyPath: m_Name
       value: Broken Platforms
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 277e140037ea04328b8f50135bb9c68f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
