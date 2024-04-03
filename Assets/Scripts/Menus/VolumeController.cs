@@ -40,7 +40,7 @@ public class VolumeController : MonoBehaviour
         volumeIcon.texture = slider.value switch
         {
             >= 0.9f => volumeHighSprite,    // >= 90% will be the full volume sprite
-            > 0.6f => volumeMediumSprite,   // between 60% and 90% is medium volume sprite
+            > 0.45f => volumeMediumSprite,   // between 45% and 90% is medium volume sprite
             > 0f => volumeLowSprite,        // between 0% and 60% will be the low volume sprite
             _ => volumeMuteSprite           // 0% will be the muted sprite
         };
