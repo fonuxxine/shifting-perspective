@@ -56,6 +56,9 @@ public class MovementController : MonoBehaviour
     [SerializeField] private AudioClip[] _fallingAudios;
     private float _footStepTimer;
     private float _timePerStep = 0.5f;
+    
+    // handle dust effect when jumping
+    public ParticleSystem dust;
 
     private void Awake()
     {
@@ -142,9 +145,10 @@ public class MovementController : MonoBehaviour
             _currMovement.y = _initialJumpVelocity * .5f;
             _lastGroundedTime = Time.time;
             if (_audioSource && jumpSound) {
-                _audioSource.PlayOneShot(jumpSound, 0.035F);
+                _audioSource.PlayOneShot(jumpSound, 0.035f);
             }
-            
+
+            dust.Play();
         }
         else if (!_isJumpPressed && _characterController.isGrounded && _isJumping)
         {
@@ -305,7 +309,7 @@ public class MovementController : MonoBehaviour
             {
                 if (hit.transform.CompareTag(tag))
                 {
-                    _audioSource.PlayOneShot(_footstepAudios[index], 0.02f);
+                    _audioSource.PlayOneShot(_footstepAudios[index], 0.035f);
                 }
                 index++;
             }
