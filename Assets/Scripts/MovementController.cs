@@ -161,7 +161,7 @@ public class MovementController : MonoBehaviour
                 {
                     if (hit.transform.CompareTag(tag))
                     {
-                        _audioSource.PlayOneShot(_fallingAudios[index], 0.035f);
+                        _audioSource.PlayOneShot(_fallingAudios[index], 0.04f);
                     }
                     index++;
                 }
@@ -309,7 +309,7 @@ public class MovementController : MonoBehaviour
             {
                 if (hit.transform.CompareTag(tag))
                 {
-                    _audioSource.PlayOneShot(_footstepAudios[index], 0.035f);
+                    _audioSource.PlayOneShot(_footstepAudios[index], 0.04f);
                 }
                 index++;
             }
