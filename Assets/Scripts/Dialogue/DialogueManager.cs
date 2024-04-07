@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public float textSpeed;
     public float autoProceedDelay = 8; // time in seconds before automatically proceeding
     public GameObject activateAfter;
+    public GameObject activateAfter2;
+
 
     private int index;
     private float timeElapsed;
@@ -137,6 +139,11 @@ public class DialogueManager : MonoBehaviour
             if (activateAfter)
             {
                 activateAfter.SetActive(true);
+            }
+
+            if (activateAfter2)
+            {
+                activateAfter2.SetActive(true);
             }
         }
     }
