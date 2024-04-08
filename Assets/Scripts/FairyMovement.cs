@@ -13,9 +13,6 @@ public class FairyMovement : MonoBehaviour
     public GameObject level;
     public float speed = 5f;
     public bool isFairyPerspective = false;
-    void Start()
-    {
-    }
 
     void Update()
     {
@@ -47,6 +44,13 @@ public class FairyMovement : MonoBehaviour
             transform.Translate(new Vector3(0, ascend, 0) * speed * Time.deltaTime);
             float rotationAmount = horizontal * 30f * speed * Time.deltaTime;
             transform.Rotate(Vector3.up, rotationAmount);
+        }
+        else
+        {
+            UnityEngine.Quaternion oldRot = transform.rotation;
+            UnityEngine.Quaternion targetRotation = UnityEngine.Quaternion.Euler(
+                oldRot.x, oldRot.y, oldRot.z);
+            transform.rotation = targetRotation;
         }
     }
 }

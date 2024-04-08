@@ -15176,7 +15176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 239424063}
   - component: {fileID: 239424066}
-  - component: {fileID: 239424065}
   - component: {fileID: 239424064}
   m_Layer: 0
   m_Name: FairyCamera
@@ -15244,14 +15243,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &239424065
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239424062}
-  m_Enabled: 1
 --- !u!20 &239424066
 Camera:
   m_ObjectHideFlags: 0
@@ -44695,12 +44686,8 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 2d630aa4fdb498f428770c72b52d1a98, type: 3}
   parentGameObjectName: Level_1
   cameraObjectName: Virtual Camera
-  _footstepAudios:
-  - {fileID: 8300000, guid: a583078300191404f978d3e1c6a0ccff, type: 3}
-  - {fileID: 8300000, guid: 5ef45075967e946d4a4b8b5a720361be, type: 3}
-  _fallingAudios:
-  - {fileID: 8300000, guid: 436c257c8679941858ca0e1ef679b4c7, type: 3}
-  - {fileID: 8300000, guid: dceaacf9e8ca74564970b244e834d93d, type: 3}
+  _footstepAudios: []
+  _fallingAudios: []
   dust: {fileID: 395298296}
 --- !u!143 &728994204
 CharacterController:
@@ -94085,7 +94072,7 @@ MonoBehaviour:
   stationaryPlatform: 1
   cameraObjectName: Virtual Camera
   ext: 0
-  rotateSound: {fileID: 8300000, guid: 9e34b95e5eb714a4d87d5936f705d421, type: 3}
+  rotateSound: {fileID: 0}
 --- !u!4 &1934659454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b4ae2026dbc74fbf960da5da65f7fdc, type: 3}
