@@ -77,7 +77,11 @@ public class PauseMenuLogic : MonoBehaviour
         } else if (currentScene.name == SceneLoader.GetSceneName(SceneID.IntLevel1))
         {
             Time.timeScale = 1;
-            SceneLoader.LoadScene(SceneID.ToBeContinued);
+            SceneLoader.LoadScene(SceneID.FinalLevel);
+        } else if (currentScene.name == SceneLoader.GetSceneName(SceneID.FinalLevel))
+        {
+            Time.timeScale = 1;
+            SceneLoader.LoadScene(SceneID.EndCredits);
         }
     }
 }

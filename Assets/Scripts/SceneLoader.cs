@@ -7,7 +7,8 @@ public enum SceneID {
     Intro2,
     IntTutLevel,
     IntLevel1,
-    ToBeContinued
+    FinalLevel,
+    EndCredits
 }
 
 public static class SceneLoader {

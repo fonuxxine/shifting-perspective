@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExtLevel.unity
     guid: 9aeca9e3dc35a4838b421f99e322edc2
-  - enabled: 0
-    path: Assets/Scenes/ExtLevel- Dana.unity
-    guid: e5b6a5fdf31794688af2cd58942f6488
   - enabled: 1
     path: Assets/Scenes/Intro2.unity
     guid: 388332da3e5e943bd80e50e31ce5b5fa
@@ -27,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/IntLevel1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/ToBeContinued.unity
-    guid: bcf9ba8ab24a7964c90ae768643ca71b
+    path: Assets/Scenes/FinalLevel.unity
+    guid: a0f097785d2c74654bcf5712447ba781
+  - enabled: 1
+    path: Assets/Scenes/EndCredits.unity
+    guid: e90e1eb33bd024039912745f67ea32a6
   m_configObjects: {}

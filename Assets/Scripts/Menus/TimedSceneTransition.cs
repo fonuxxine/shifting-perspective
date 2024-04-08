@@ -23,6 +23,6 @@ public class TimedSceneTransition : MonoBehaviour
 
     void LoadCredits()
     {
-        SceneLoader.LoadScene(SceneID.ToBeContinued);
+        SceneLoader.LoadScene(SceneID.EndCredits);
     }
 }
