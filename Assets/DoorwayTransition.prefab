@@ -306,8 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 55477ee880cbed347abefee27aedd45f, type: 3}
+  keyboardSprite: {fileID: 21300000, guid: a8c37c573841e284e83a987cb8e4eb0a, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 6ed6fc5011b752447922911c2bc5625e, type: 3}
   xboxSprite: {fileID: 21300000, guid: db487996d03d588489af2ed9d9addafe, type: 3}
   imageToChange: {fileID: 741777001608859250}
 --- !u!224 &4993319343612158688 stripped

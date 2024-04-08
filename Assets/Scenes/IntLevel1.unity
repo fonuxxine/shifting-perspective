@@ -25410,11 +25410,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 987195046}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 180}
---- !u!1 &387714482 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5046723439967773809, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
-  m_PrefabInstance: {fileID: 612001501}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395298293
 GameObject:
   m_ObjectHideFlags: 0
@@ -56305,7 +56300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 387714482}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1168095404
@@ -94749,8 +94744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 55477ee880cbed347abefee27aedd45f, type: 3}
+  keyboardSprite: {fileID: 21300000, guid: a8c37c573841e284e83a987cb8e4eb0a, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 6ed6fc5011b752447922911c2bc5625e, type: 3}
   xboxSprite: {fileID: 21300000, guid: db487996d03d588489af2ed9d9addafe, type: 3}
   imageToChange: {fileID: 6042372642663037905}
 --- !u!1660057539 &9223372036854775807
