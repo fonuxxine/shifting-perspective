@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TimedMainMenuTransition : MonoBehaviour
 {
-    public float delayTime = 3f;
+    public float delayTime = 1000f;
     
     void Start()
     {
