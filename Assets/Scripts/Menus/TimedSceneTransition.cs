@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class TimedSceneTransition : MonoBehaviour
 {
-    public float delayTime = 3f;
+
+    public float delayTime = 1000f;
     public bool skipCredits = true; // true for Main Menu, false for credits
     
     void Start()
@@ -18,6 +19,7 @@ public class TimedSceneTransition : MonoBehaviour
     {
         SceneLoader.LoadScene(SceneID.MainMenu);
     }
+
 
     void LoadCredits()
     {
