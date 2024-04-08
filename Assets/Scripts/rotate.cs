@@ -78,7 +78,7 @@ public class rotate : MonoBehaviour
     IEnumerator RotateVerti(float angle, float duration=1f)
     {
         if (_audioSource && rotateSound) {
-            _audioSource.PlayOneShot(rotateSound, 0.035f);
+            _audioSource.PlayOneShot(rotateSound, 0.15f);
         }
         
         Quaternion startRotation = Quaternion.Euler(0, currentYAngle, currentXAngle);
