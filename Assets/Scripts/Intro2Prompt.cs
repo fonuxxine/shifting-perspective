@@ -10,7 +10,7 @@ public class Intro2Prompt : MonoBehaviour
     private void Update()
     {
         // Check if the parent object exists and its rotation is 180 degrees in the Y direction
-        if (targetObject.transform.eulerAngles.z == 180f)
+        if (targetObject.GetComponent<rotate>().rotations >= 1)
         {
             // Enable this child object
             gameObject.GetComponent<Canvas>().enabled = true;

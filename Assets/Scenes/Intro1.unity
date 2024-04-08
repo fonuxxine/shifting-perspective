@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.058577217, g: 0.06349025, b: 0.08076627, a: 1}
+  m_IndirectSpecularColor: {r: 0.058577217, g: 0.06349025, b: 0.080767296, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -889,6 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: ExtLevel
+  targetObject: {fileID: 2107624343}
 --- !u!1 &1490699930
 GameObject:
   m_ObjectHideFlags: 3
@@ -1350,6 +1351,8 @@ MonoBehaviour:
   stationaryPlatform: 1
   cameraObjectName: Virtual Camera
   ext: 1
+  rotateSound: {fileID: 0}
+  rotations: 0
 --- !u!4 &2107624348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}

@@ -24,7 +24,9 @@ public class rotate : MonoBehaviour
     
     public AudioClip rotateSound;
     private AudioSource _audioSource;
-    
+
+    public int rotations = 0;
+    public int cameraRotations = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -96,7 +98,7 @@ public class rotate : MonoBehaviour
         rotateX = 0f;
         stationaryPlatform = true;
         objectTransform.rotation = endRotation; // Ensure the final rotation is set
-        
+        rotations += 1;
         // Debug.Log("RotateVerti complete");
     }
 

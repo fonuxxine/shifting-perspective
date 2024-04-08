@@ -65,6 +65,7 @@ public class cameraRotate : MonoBehaviour
         currentYAngle += angle;
         objectTransform.rotation = endRotation; // Ensure the final rotation is set
         rotationReset = true;
+        rotateScript.cameraRotations += 1;
     }
     
     void updateRotationState(float rotAngle)
