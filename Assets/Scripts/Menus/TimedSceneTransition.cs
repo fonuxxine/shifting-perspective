@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TimedMainMenuTransition : MonoBehaviour
+public class TimedSceneTransition : MonoBehaviour
 {
     public float delayTime = 1000f;
     
