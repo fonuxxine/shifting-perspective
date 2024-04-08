@@ -545,7 +545,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82a5adf9959531b4f9aea889c90f0f4b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb858b3f40e92564cb916f0e2768254e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -575,8 +575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboardSprite: {fileID: 21300000, guid: 82a5adf9959531b4f9aea889c90f0f4b, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 6a05070c1882be74e9799519da1fae55, type: 3}
+  keyboardSprite: {fileID: 21300000, guid: eb858b3f40e92564cb916f0e2768254e, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 3806bc02ed36fc24fb8356e2beb80963, type: 3}
   xboxSprite: {fileID: 21300000, guid: 6a05070c1882be74e9799519da1fae55, type: 3}
   imageToChange: {fileID: 769293854}
 --- !u!1 &798627995
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8c37c573841e284e83a987cb8e4eb0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -667,8 +667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboardSprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 06b12767390e1ef4a918c200f3f94fa3, type: 3}
+  keyboardSprite: {fileID: 21300000, guid: a8c37c573841e284e83a987cb8e4eb0a, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 6ed6fc5011b752447922911c2bc5625e, type: 3}
   xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
   imageToChange: {fileID: 798627997}
 --- !u!1 &1051467479
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 57c7af06a6efb8245b20179ff8e7ecbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27d6143452a7a8a41b50d355d624b74b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1094,8 +1094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboardSprite: {fileID: 21300000, guid: 57c7af06a6efb8245b20179ff8e7ecbe, type: 3}
-  playstationSprite: {fileID: 21300000, guid: 78e559a2837804c41889c2ef9dca57fd, type: 3}
+  keyboardSprite: {fileID: 21300000, guid: 27d6143452a7a8a41b50d355d624b74b, type: 3}
+  playstationSprite: {fileID: 21300000, guid: a55d68c4dc1aa004bbceb28a06844b4b, type: 3}
   xboxSprite: {fileID: 21300000, guid: 78e559a2837804c41889c2ef9dca57fd, type: 3}
   imageToChange: {fileID: 1724468986}
 --- !u!1 &1737294944

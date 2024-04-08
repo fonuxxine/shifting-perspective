@@ -22,6 +22,9 @@ public class rotate : MonoBehaviour
     // check if character is grounded
     private bool _grounded = true;
     
+    public AudioClip rotateSound;
+    private AudioSource _audioSource;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,13 @@ public class rotate : MonoBehaviour
         else
         {
             Debug.LogError("Please assign the parent GameObject's name in the Unity Inspector.");
+        }
+        
+        _audioSource = GetComponentInChildren<AudioSource>();
+
+        if (!_audioSource)
+        {
+            Debug.LogWarning("Level has no AudioSource.");
         }
     }
 
@@ -67,6 +77,10 @@ public class rotate : MonoBehaviour
     
     IEnumerator RotateVerti(float angle, float duration=1f)
     {
+        if (_audioSource && rotateSound) {
+            _audioSource.PlayOneShot(rotateSound, 0.035f);
+        }
+        
         Quaternion startRotation = Quaternion.Euler(0, currentYAngle, currentXAngle);
         Quaternion endRotation = Quaternion.Euler(0, currentYAngle, currentXAngle + angle);
         float timePassed = 0f;
