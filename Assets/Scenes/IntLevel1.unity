@@ -94072,7 +94072,7 @@ MonoBehaviour:
   stationaryPlatform: 1
   cameraObjectName: Virtual Camera
   ext: 0
-  rotateSound: {fileID: 0}
+  rotateSound: {fileID: 8300000, guid: 9e34b95e5eb714a4d87d5936f705d421, type: 3}
   rotations: 0
   cameraRotations: 0
 --- !u!4 &1934659454 stripped
