@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13310361, g: 0.14760509, b: 0.29370838, a: 1}
+  m_IndirectSpecularColor: {r: 0.1331194, g: 0.14761737, b: 0.29371548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1007,6 +1007,8 @@ MonoBehaviour:
   cameraObjectName: Virtual Camera
   ext: 0
   rotateSound: {fileID: 8300000, guid: 9e34b95e5eb714a4d87d5936f705d421, type: 3}
+  rotations: 0
+  cameraRotations: 0
 --- !u!4 &757322967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ff294f13ef76640468374632d092aa77, type: 3}
@@ -1415,7 +1417,7 @@ Transform:
   m_GameObject: {fileID: 1064709589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9990483, z: -0.043619405, w: 0}
-  m_LocalPosition: {x: -0.7150635, y: -3.4348936, z: 5.7386684}
+  m_LocalPosition: {x: -0.7150635, y: -3.6092052, z: 3.7462788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2133,7 +2135,7 @@ Transform:
   m_GameObject: {fileID: 1448129058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9990483, z: -0.043619405, w: 0}
-  m_LocalPosition: {x: -0.7150635, y: -3.4348936, z: 5.7386684}
+  m_LocalPosition: {x: -0.7150635, y: -3.6092052, z: 3.7462788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7027,7 +7029,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 3.5
+  m_CameraDistance: 1.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -7368,9 +7370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555e78fa7e4c74712b4cf3ad9af73f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveFactor: 2.5
+  _moveFactor: 1.5
   _rotationFactor: 3
-  _maxJumpHeight: 1.5
+  _maxJumpHeight: 1
   _maxJumpTime: 0.9
   jumpSound: {fileID: 8300000, guid: 2d630aa4fdb498f428770c72b52d1a98, type: 3}
   parentGameObjectName: Final Room
@@ -7903,15 +7905,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9925,7 +9927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2141408438
 Transform:
   m_ObjectHideFlags: 0
@@ -9935,8 +9937,8 @@ Transform:
   m_GameObject: {fileID: 2141408437}
   serializedVersion: 2
   m_LocalRotation: {x: 0.69465834, y: 0, z: 0, w: 0.71933985}
-  m_LocalPosition: {x: 0, y: 0.055, z: 1.741}
-  m_LocalScale: {x: 0.5, y: 1.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: -0.007, z: 1.034}
+  m_LocalScale: {x: 0.5, y: 0.75, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1448129062}
