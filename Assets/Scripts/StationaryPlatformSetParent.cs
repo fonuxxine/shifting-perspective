@@ -5,12 +5,16 @@ using UnityEngine;
 public class StationaryPlatformSetParent : MonoBehaviour
 {
     public string desiredParentName = "Level_1"; // Public variable for setting the parent name in the Inspector
+    public GameObject offEffect;
+    public GameObject onEffect;
 
     // Detach player parent when entering the trigger zone
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))  // check if the colliding object is the Player
         {
+            offEffect.GetComponent<ParticleSystem>().Stop();
+            onEffect.GetComponent<ParticleSystem>().Play();
             other.transform.parent = null;
         }
     }
@@ -23,6 +27,9 @@ public class StationaryPlatformSetParent : MonoBehaviour
             // Find the desired parent by name
             Transform desiredParent = GameObject.Find(desiredParentName)?.transform;
             other.transform.parent = desiredParent;
+            onEffect.GetComponent<ParticleSystem>().Stop();
+            offEffect.GetComponent<ParticleSystem>().Play();
         }
+        
     }
 }
