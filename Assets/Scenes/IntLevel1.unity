@@ -61585,15 +61585,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.47
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.32
+      value: 1.069
       objectReference: {fileID: 0}
     - target: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.85
+      value: -17.262
       objectReference: {fileID: 0}
     - target: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -94073,6 +94073,8 @@ MonoBehaviour:
   cameraObjectName: Virtual Camera
   ext: 0
   rotateSound: {fileID: 0}
+  rotations: 0
+  cameraRotations: 0
 --- !u!4 &1934659454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b4ae2026dbc74fbf960da5da65f7fdc, type: 3}
