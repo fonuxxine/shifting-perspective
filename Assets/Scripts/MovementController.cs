@@ -14,7 +14,7 @@ public class MovementController : MonoBehaviour
     private Vector3 _currMovement;
 
     private bool _isMovementPressed = false;
-    public float _moveFactor = 1.0f;
+    public float _moveFactor = 1.5f;
     public float _rotationFactor = 2.0f;
     
     private bool _isJumpPressed = false;
@@ -25,6 +25,17 @@ public class MovementController : MonoBehaviour
     public float _maxJumpTime = 0.75f;
     private bool _isJumping;
     private float _lastGroundedTime;
+    private bool _isFalling = false;
+    
+    private float _coyoteTime = .2f;
+    private float _onGround = float.MinValue;
+    public AudioClip jumpSound;
+    private AudioSource _audioSource;
+    
+    // handle fall damage
+    private float _timeFalling = 0f;
+    private bool _damage = false;
+    private PlayerHealth _playerHealth;
     
     private float _gravity = -9.8f;
     private float _groundedGravity = -1f;
@@ -32,15 +43,30 @@ public class MovementController : MonoBehaviour
     public string parentGameObjectName;
     private cameraRotate cameraScript;
     public string cameraObjectName;
-    private 
+    private Collider _playerCollider;
     
-    Collider _playerCollider;
+    // handle sound effects
+    private enum TerrainTags
+    {
+        Grass,
+        Stone
+    }
+
+    [SerializeField] private AudioClip[] _footstepAudios;
+    [SerializeField] private AudioClip[] _fallingAudios;
+    private float _footStepTimer;
+    private float _timePerStep = 0.5f;
+    
+    // handle dust effect when jumping
+    public ParticleSystem dust;
 
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        _playerHealth = GetComponent<PlayerHealth>();
+        
 
         _playerInput.CharacterControls.Move.started += OnMovementInput;
         _playerInput.CharacterControls.Move.canceled += OnMovementInput;
@@ -66,6 +92,8 @@ public class MovementController : MonoBehaviour
         {
             Debug.LogError("Please assign the parent GameObject's name in the Unity Inspector.");
         }
+
+        _audioSource = GetComponentInChildren<AudioSource>();
     }
 
     void JumpVariables()
@@ -111,32 +139,57 @@ public class MovementController : MonoBehaviour
 
     void HandleJump()
     {
-        if (!_isJumping && _characterController.isGrounded && _isJumpPressed)
+        if (!_isJumping && (_characterController.isGrounded || Time.time - _onGround < _coyoteTime) && _isJumpPressed)
         {
             _isJumping = true;
             _currMovement.y = _initialJumpVelocity * .5f;
             _lastGroundedTime = Time.time;
+            if (_audioSource && jumpSound) {
+                _audioSource.PlayOneShot(jumpSound, 0.035f);
+            }
+
+            dust.Play();
         }
         else if (!_isJumpPressed && _characterController.isGrounded && _isJumping)
         {
             _isJumping = false; 
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f))
+            {
+                int index = 0;
+                foreach (string tag in Enum.GetNames(typeof(TerrainTags)))
+                {
+                    if (hit.transform.CompareTag(tag))
+                    {
+                        _audioSource.PlayOneShot(_fallingAudios[index], 0.04f);
+                    }
+                    index++;
+                }
+            }
         }
     }
 
     void HandleGravity()
     {
-        bool isFalling = _currMovement.y <= 0.0f || !_isJumpPressed;
+        _isFalling = _currMovement.y <= 0.0f || !_isJumpPressed;
         float fallMult = 2.0f;
         if (_characterController.isGrounded)
         {
             _currMovement.y = _groundedGravity;
-        } else if (isFalling)
+            if (_timeFalling > 0.6f)
+            {
+                _damage = true;
+            }
+            _timeFalling = 0f;
+            _onGround = Time.time;
+            rotateScript.AllowRotation();
+        } else if (_isFalling)
         {
             float prevYVelocity = _currMovement.y;
             float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
             float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
             _currMovement.y = nextYVelocity;
-            
+            _timeFalling += Time.deltaTime;
         }
         else
         {
@@ -145,49 +198,6 @@ public class MovementController : MonoBehaviour
             float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
             _currMovement.y = nextYVelocity;
         }
-        
-        // bool isFalling =  _currMovement.y <= 0.0f || !_isJumping;
-        // float fallMult = 2.0f;
-        //
-        // float distToMoveDown = 9.81f * Time.deltaTime;
-        // RaycastHit hit;
-        // Vector3 origin = transform.position -
-        //                  new Vector3(0, _characterController.center.y + _characterController.height + .2f, 0);
-        // _isGrounded = Physics.Raycast(origin, Vector3.down, out hit, _playerCollider.bounds.extents.y,
-        //     LayerMask.GetMask(("Floor")));
-        // if (_isGrounded) 
-        // {
-        //     distToMoveDown = hit.distance;
-        //     _characterController.Move(new Vector3(0, -distToMoveDown, 0));
-        //     Debug.Log("isGrounded");
-        // } else if (isFalling)
-        // {
-        //     float prevYVelocity = _currMovement.y;
-        //     float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
-        //     float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
-        //     _currMovement.y = nextYVelocity;
-        //     Debug.Log("isFalling");
-        // }
-        // else
-        // {
-        //     float prevYVelocity = _currMovement.y;
-        //     float newYVelocity = _currMovement.y + (_gravity * Time.deltaTime);
-        //     float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
-        //     _currMovement.y = nextYVelocity;
-        // }
-        
-        //
-        //
-        // if (_characterController.isGrounded)
-        // {
-        //     _currMovement.y = _groundedGravity;
-        // } else if (_isFalling)
-        // {
-        //     float prevYVelocity = _currMovement.y;
-        //     float newYVelocity = _currMovement.y + (_gravity * fallMult * Time.deltaTime);
-        //     float nextYVelocity = (prevYVelocity + newYVelocity) * .5f;
-        //     _currMovement.y = nextYVelocity;
-        // }
     }
 
     void handleAnimation()
@@ -214,7 +224,7 @@ public class MovementController : MonoBehaviour
             _animator.SetBool("isJumping", false);
         }
 
-        if (Time.time - _lastGroundedTime > _maxJumpTime && Time.time - _lastGroundedTime < _maxJumpTime + 0.2f)
+        if (Time.time - _lastGroundedTime > _maxJumpTime - 0.1f && Time.time - _lastGroundedTime < _maxJumpTime + 0.1f)
         {
             _animator.SetBool("isLanding", true);
         }
@@ -241,18 +251,6 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    void handleRotateLevel()
-    {
-        Quaternion currDirection = transform.rotation;
-        
-        float rotateX = (rotateScript != null) ? rotateScript.rotateX : 0f;
-        Quaternion targetDirection = Quaternion.Euler(
-            currDirection.eulerAngles.x + 2*rotateX,
-            currDirection.eulerAngles.y, 
-            currDirection.eulerAngles.z);
-        transform.rotation = Quaternion.Slerp(currDirection, targetDirection, _rotationFactor * Time.deltaTime);
-    }
-    
     // Update is called once per frame
     void Update()
     {
@@ -266,11 +264,43 @@ public class MovementController : MonoBehaviour
             HandleGravity();
             HandleJump();
             _characterController.Move(_currMovement * Time.deltaTime);
+            _footStepTimer += Time.deltaTime;
+            if (_isMovementPressed && _footStepTimer > _timePerStep)
+            {
+                GetCollidedTexture();
+                _footStepTimer = 0;
+            }
         }
         else
         {
             //handleRotateLevel();
             _animator.enabled = false;
+        }
+        // if (_damage)
+        // {
+        //     _playerHealth.DecreaseHealth(1);
+        //     _damage = false;
+        // }
+        // if (!_characterController.isGrounded)
+        // {
+        //     rotateScript.SetRotationInput();
+        // }
+    }
+
+    private void GetCollidedTexture()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f))
+        {
+            int index = 0;
+            foreach (string tag in Enum.GetNames(typeof(TerrainTags)))
+            {
+                if (hit.transform.CompareTag(tag))
+                {
+                    _audioSource.PlayOneShot(_footstepAudios[index], 0.04f);
+                }
+                index++;
+            }
         }
     }
 

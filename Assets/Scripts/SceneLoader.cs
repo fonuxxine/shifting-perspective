@@ -2,9 +2,13 @@ using UnityEngine.SceneManagement;
 
 public enum SceneID {
     MainMenu,
+    Intro1,
     ExtLevel,
+    Intro2,
+    IntTutLevel,
     IntLevel1,
-    ToBeContinued
+    FinalLevel,
+    EndCredits
 }
 
 public static class SceneLoader {

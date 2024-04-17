@@ -42,7 +42,7 @@ public class SceneTransition : MonoBehaviour
         }
 
         // check if player is in range and presses Enter key, if so load scene
-        if (_isInRange && Input.GetKeyDown(KeyCode.Return))
+        if (_isInRange && (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             SceneManager.LoadScene(sceneName);
         }

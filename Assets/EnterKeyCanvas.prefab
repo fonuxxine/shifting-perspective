@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1322058377349509551}
   - component: {fileID: 7334532523584980285}
   - component: {fileID: 644062867582734652}
+  - component: {fileID: 288217490046269743}
   m_Layer: 5
   m_Name: EnterKeyImage
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: da871369813580247842e5972cd7096f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8c37c573841e284e83a987cb8e4eb0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -75,6 +76,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &288217490046269743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324251943299529535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c97550b999298418cee556b2264b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardSprite: {fileID: 21300000, guid: a8c37c573841e284e83a987cb8e4eb0a, type: 3}
+  playstationSprite: {fileID: 21300000, guid: 6ed6fc5011b752447922911c2bc5625e, type: 3}
+  xboxSprite: {fileID: 21300000, guid: ff8815e15160d1f40939828eb4ab8306, type: 3}
+  imageToChange: {fileID: 644062867582734652}
 --- !u!1 &2580814561142089356
 GameObject:
   m_ObjectHideFlags: 0
