@@ -165,6 +165,18 @@ MonoBehaviour:
     m_Scale: 1
     m_Name: JumpCon
     m_HashCode: 1305762272
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 18
+    m_Scale: 1
+    m_Name: ShiftKBM
+    m_HashCode: -590924220
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 19
+    m_Scale: 1
+    m_Name: ShiftCon
+    m_HashCode: -590933726
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -462,10 +474,10 @@ MonoBehaviour:
       m_HorizontalBearingY: 340
       m_HorizontalAdvance: 1024
     m_GlyphRect:
-      m_X: 1844
+      m_X: 896
       m_Y: 0
-      m_Width: 102
-      m_Height: 102
+      m_Width: 64
+      m_Height: 64
     m_Scale: 1.5
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -478,10 +490,10 @@ MonoBehaviour:
       m_HorizontalBearingY: 340
       m_HorizontalAdvance: 1024
     m_GlyphRect:
-      m_X: 1946
+      m_X: 960
       m_Y: 0
-      m_Width: 102
-      m_Height: 102
+      m_Width: 64
+      m_Height: 64
     m_Scale: 1.5
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
