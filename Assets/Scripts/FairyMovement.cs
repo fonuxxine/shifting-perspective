@@ -13,6 +13,9 @@ public class FairyMovement : MonoBehaviour
     public GameObject level;
     public float speed = 5f;
     public bool isFairyPerspective = false;
+    
+    public GameObject toggleBindDisplay;
+    public GameObject fairyControlsDisplay;
 
     void Update()
     {
@@ -21,17 +24,37 @@ public class FairyMovement : MonoBehaviour
             isFairyPerspective = !isFairyPerspective;
             if (isFairyPerspective)
             {
+                if (toggleBindDisplay)
+                {
+                    toggleBindDisplay.SetActive(false);
+                }
+                
                 camera.SetActive(false);
                 fairyCamera.SetActive(true);
                 player.GetComponent<MovementController>().enabled = false;
                 level.GetComponent<rotate>().enabled = false;
+
+                if (fairyControlsDisplay)
+                {
+                    fairyControlsDisplay.SetActive(true);
+                }
             }
             else
             {
+                if (fairyControlsDisplay)
+                {
+                    fairyControlsDisplay.SetActive(false);
+                }
+                
                 camera.SetActive(true);
                 fairyCamera.SetActive(false);
                 player.GetComponent<MovementController>().enabled = true;
                 level.GetComponent<rotate>().enabled = true;
+                
+                if (toggleBindDisplay)
+                {
+                    toggleBindDisplay.SetActive(true);
+                }
             }
         }
         if (isFairyPerspective)
