@@ -35,8 +35,7 @@ public class cameraRotate : MonoBehaviour
     void Update()
     {
         float _userRotateYInput = (rotateScript != null) ? -rotateScript._userRotateYInput : 0f;
-        bool levelRotating = (rotateScript != null) ? rotateScript.stationaryPlatform : false;
-        if (levelRotating)
+        if (rotationReset)
         {
             if (_userRotateYInput > 0)
             {

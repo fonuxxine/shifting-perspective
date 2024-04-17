@@ -251,18 +251,6 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    void handleRotateLevel()
-    {
-        Quaternion currDirection = transform.rotation;
-        
-        float rotateX = (rotateScript != null) ? rotateScript.rotateX : 0f;
-        Quaternion targetDirection = Quaternion.Euler(
-            currDirection.eulerAngles.x + 2*rotateX,
-            currDirection.eulerAngles.y, 
-            currDirection.eulerAngles.z);
-        transform.rotation = Quaternion.Slerp(currDirection, targetDirection, _rotationFactor * Time.deltaTime);
-    }
-    
     // Update is called once per frame
     void Update()
     {

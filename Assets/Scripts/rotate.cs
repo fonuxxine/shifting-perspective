@@ -7,14 +7,13 @@ public class rotate : MonoBehaviour
 {
     public float _userRotateYInput;
     public float _userRotateXInput;
-    public float rotateX = 0f;
     private Transform objectTransform;
     private float currentYAngle;
-    private float currentXAngle;
+    public float currentXAngle;
     private Quaternion baseAngles;
     private bool rotationReset = true;
     public bool rotating = false;
-    public bool stationaryPlatform = true;
+    public bool takingInput = true;
     
     private cameraRotate cameraScript;
     public string cameraObjectName;
@@ -58,22 +57,32 @@ public class rotate : MonoBehaviour
     void Update()
     {
         bool isCameraReset = (cameraScript != null) ? cameraScript.rotationReset : false;
-        if (!isCameraReset)
+        rotating = !rotationReset || !isCameraReset;
+
+        if (!takingInput && Input.GetAxis("RotateHori") == 0 && Input.GetAxis("RotateVerti") == 0)
         {
-            rotationReset = false;
-        }
-        if (_userRotateYInput != 0 || _userRotateXInput != 0 || !rotationReset) 
-        {
-            rotating = true;
-        } else
-        {
-            rotating = false;
+            takingInput = true;
         }
 
-        if (_grounded)
+        if (rotating)
         {
-            HandleRotationInput();
+            takingInput = false;
+            _userRotateYInput = 0;
+            _userRotateXInput = 0;
         }
+
+        if (takingInput)
+        {
+            if (_userRotateXInput == 0)
+            {
+                _userRotateYInput = Input.GetAxis("RotateHori");
+            }
+            if (_userRotateYInput == 0)
+            {
+                _userRotateXInput = Input.GetAxis("RotateVerti");
+            } 
+        }
+        HandleRotationInput();
         
     }
     
@@ -88,16 +97,14 @@ public class rotate : MonoBehaviour
         float timePassed = 0f;
         while (timePassed < duration)
         {
-            stationaryPlatform = false;
             rotationReset = false;
             objectTransform.rotation = Quaternion.Slerp(startRotation, endRotation, timePassed / duration);
             timePassed += Time.deltaTime;
             yield return null;
         }
-        currentXAngle += angle;
-        rotateX = 0f;
-        stationaryPlatform = true;
+        currentXAngle = endRotation.eulerAngles.z;
         objectTransform.rotation = endRotation; // Ensure the final rotation is set
+        rotationReset = true;
         rotations += 1;
         // Debug.Log("RotateVerti complete");
     }
@@ -105,53 +112,24 @@ public class rotate : MonoBehaviour
 
      private void HandleRotationInput()
     {
-        if (rotationReset)
-        {
-            if (_userRotateXInput == 0)
-            {
-                _userRotateYInput = Input.GetAxis("RotateHori");
-            }
-            if (_userRotateYInput == 0)
-            {
-                _userRotateXInput = Input.GetAxis("RotateVerti");
-            } 
-        }
-        else
-        {
-            _userRotateYInput = 0;
-            _userRotateXInput = 0;
-            if (Input.GetAxis("RotateHori") == 0 && Input.GetAxis("RotateVerti") == 0)
-            {
-                rotationReset = true;
-            }
-        }
-        
         if (!ext)
         {
-            if (_userRotateXInput != 0)
+            if (rotationReset)
             {
-                stationaryPlatform = false;
-                if (Math.Abs(_userRotateXInput) < 1)
+                if (_userRotateXInput > 0)
                 {
-                    objectTransform.rotation =
-                        Quaternion.Euler(0, currentYAngle, currentXAngle + _userRotateXInput * 10f);
+                    takingInput = false;
+                    _userRotateYInput = 0;
+                    _userRotateXInput = 0;
+                    StartCoroutine(RotateVerti(90f));
                 }
-                else if (_userRotateXInput == 1)
+                else if (_userRotateXInput < 0)
                 {
-                    currentXAngle += 10f;
-                    rotateX = 90f;
-                    StartCoroutine(RotateVerti(80f));
+                    takingInput = false;
+                    _userRotateYInput = 0;
+                    _userRotateXInput = 0;
+                    StartCoroutine(RotateVerti(-90f));
                 }
-                else if (_userRotateXInput == -1)
-                {
-                    currentXAngle -= 10f;
-                    rotateX = -90f;
-                    StartCoroutine(RotateVerti(-80f));
-                }
-            }
-            else
-            {
-                stationaryPlatform = true;
             }
         }
     }
