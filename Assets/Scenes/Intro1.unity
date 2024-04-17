@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.058577217, g: 0.06349025, b: 0.080767296, a: 1}
+  m_IndirectSpecularColor: {r: 0.058577217, g: 0.06349025, b: 0.08076627, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -464,10 +464,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -235726145203264561, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 442f4d915d47d09418a390c47bffdb25, type: 2}
     - target: {fileID: 919132149155446097, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
       propertyPath: m_Name
       value: IntroFairy
       objectReference: {fileID: 0}
+    - target: {fileID: 2026081558148769356, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c984107d0ef779a4a82cc04949a9b5be, type: 2}
     - target: {fileID: 2223639932434330405, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
       propertyPath: m_Animations.Array.size
       value: 1
@@ -1346,13 +1354,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userRotateYInput: 0
   _userRotateXInput: 0
-  rotateX: 0
+  currentXAngle: 0
   rotating: 0
-  stationaryPlatform: 1
+  takingInput: 1
   cameraObjectName: Virtual Camera
   ext: 1
   rotateSound: {fileID: 0}
   rotations: 0
+  cameraRotations: 0
 --- !u!4 &2107624348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}

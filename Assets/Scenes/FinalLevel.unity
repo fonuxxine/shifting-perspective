@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1331194, g: 0.14761737, b: 0.29371548, a: 1}
+  m_IndirectSpecularColor: {r: 0.13310361, g: 0.14760509, b: 0.29370838, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1001,9 +1001,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userRotateYInput: 0
   _userRotateXInput: 0
-  rotateX: 0
+  currentXAngle: 0
   rotating: 0
-  stationaryPlatform: 1
+  takingInput: 1
   cameraObjectName: Virtual Camera
   ext: 0
   rotateSound: {fileID: 8300000, guid: 9e34b95e5eb714a4d87d5936f705d421, type: 3}
@@ -1593,10 +1593,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -235726145203264561, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 442f4d915d47d09418a390c47bffdb25, type: 2}
     - target: {fileID: 919132149155446097, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
       propertyPath: m_Name
       value: Fairy
       objectReference: {fileID: 0}
+    - target: {fileID: 2026081558148769356, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c984107d0ef779a4a82cc04949a9b5be, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7153,10 +7161,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -235726145203264561, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 442f4d915d47d09418a390c47bffdb25, type: 2}
     - target: {fileID: 919132149155446097, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
       propertyPath: m_Name
       value: Fairy
       objectReference: {fileID: 0}
+    - target: {fileID: 2026081558148769356, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c984107d0ef779a4a82cc04949a9b5be, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

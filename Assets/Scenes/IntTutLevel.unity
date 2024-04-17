@@ -13901,7 +13901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3587575248045642416, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.61
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 3587575248045642416, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -13925,15 +13925,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4143555977248209323, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13987,6 +13987,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.039100032
       objectReference: {fileID: 0}
+    - target: {fileID: 8650435197067310193, guid: e68757947d1ac2f4eac475ce68d910ed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2abd02ec996dd2644ac39b681ef59923, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30675,12 +30679,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userRotateYInput: 0
   _userRotateXInput: 0
-  rotateX: 0
+  currentXAngle: 0
   rotating: 0
-  stationaryPlatform: 1
+  takingInput: 1
   cameraObjectName: Virtual Camera
   ext: 0
   rotateSound: {fileID: 8300000, guid: 9e34b95e5eb714a4d87d5936f705d421, type: 3}
+  rotations: 0
+  cameraRotations: 0
 --- !u!1 &1926877388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7145434741641298486, guid: ca35c9af75a77498eaa5805879af50ef, type: 3}
@@ -31202,10 +31208,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -235726145203264561, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 442f4d915d47d09418a390c47bffdb25, type: 2}
     - target: {fileID: 919132149155446097, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
       propertyPath: m_Name
       value: Fairy
       objectReference: {fileID: 0}
+    - target: {fileID: 2026081558148769356, guid: 154ac0a83e602404badbecfa0b7cae90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c984107d0ef779a4a82cc04949a9b5be, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
