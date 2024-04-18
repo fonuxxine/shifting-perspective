@@ -1,19 +1,6 @@
-# shifting-perspective
-This game is a narrative puzzle platformer that has the player navigating a castle in order to reach the villain of the story. The player has the ability to rotate the axis of levels, so they need to use that power in order to change their perspective to either reach a certain platform or complete a certain level. And the story will revolve around viewing the world from different perspectives.
 
-Gameplay:
-- [ ] Horizontal Rotation
-- [ ] Player Movement
-   - [ ] Dashing
-   - [ ] Double Jump
-   - [ ] Coyote Time
-- [ ]  Healthbar
-- [ ]  Checkpoints
-- [ ]  TODO
+![Logo_Backgroundless](https://github.com/fonuxxine/shifting-perspective/assets/38470547/36bd94ed-eb08-4f5b-9238-055262cc4f3a)
 
-Assets:
-- [ ]  Boundary Box
-- [ ]  TODO
+Shifting Perspective is a 3D narrative puzzle-platformer that uses depth perception, player perspective and level rotation to challenge the player with perspective-based puzzle platforming. The player must view each level from different perspectives and orientations to navigate a castle of puzzles and platforms.
 
-Soundtrack:
-- [ ] TODO
+Itch.io page: https://gameteam7.itch.io/shifting-perspective 
