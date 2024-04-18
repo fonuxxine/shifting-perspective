@@ -755,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4900260827959590027, guid: 54550b9a1dea31342ac855be073142de, type: 3}
       propertyPath: quests.Array.data[0]
-      value: Talk to Fairy
+      value: Talk to Ceru
       objectReference: {fileID: 0}
     - target: {fileID: 4900260827959590027, guid: 54550b9a1dea31342ac855be073142de, type: 3}
       propertyPath: quests.Array.data[1]
