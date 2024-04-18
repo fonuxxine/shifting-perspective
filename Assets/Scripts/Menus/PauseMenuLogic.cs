@@ -5,6 +5,7 @@ public class PauseMenuLogic : MonoBehaviour
 {
     private bool paused;
     public GameObject menu;
+    public GameObject settingsButtonCanvas;
     
     // start is called before the first frame update
     void Start()
@@ -18,28 +19,35 @@ public class PauseMenuLogic : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            paused = !paused;
-            if (paused)
-            {
-                pauseGame();
-            }
-            else
-            {
-                unpauseGame();
-            }
+            TogglePauseGame();
         }
     }
 
-    public void pauseGame()
+    public void TogglePauseGame()
+    {
+        paused = !paused;
+        if (paused)
+        {
+            pauseGame();
+        }
+        else
+        {
+            unpauseGame();
+        }
+    }
+
+    private void pauseGame()
     {
         Time.timeScale = 0;
         menu.SetActive(true);
+        settingsButtonCanvas.SetActive(false);
     }
 
-    public void unpauseGame()
+    private void unpauseGame()
     {
         Time.timeScale = 1;
         menu.SetActive(false);
+        settingsButtonCanvas.SetActive(true);
     }
 
     public void restartLevel()
