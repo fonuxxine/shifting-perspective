@@ -215,11 +215,11 @@ public class MovementController : MonoBehaviour
             _animator.SetBool("isWalking", false);
         }
 
-        if (!isJumping && _isJumpPressed)
+        if (!isJumping && _isJumpPressed && !_characterController.isGrounded)
         {
             _animator.SetBool("isJumping", true);
         }
-        if (isJumping && !_isJumpPressed)
+        if (isJumping && (!_isJumpPressed || _characterController.isGrounded))
         {
             _animator.SetBool("isJumping", false);
         }

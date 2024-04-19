@@ -13,6 +13,8 @@ public class leverActivate : MonoBehaviour
     public GameObject enterKey;
     public GameObject activateAfter;
     public GameObject deactivateAfter;
+    public GameObject deactivateAfter2;
+
     public GameObject killzones;
     public AudioClip leverSound;
     public AudioClip gateSound;
@@ -102,6 +104,11 @@ public class leverActivate : MonoBehaviour
         if (deactivateAfter)
         {
             deactivateAfter.SetActive(false);
+        }
+
+        if (deactivateAfter2)
+        {
+            deactivateAfter2.SetActive(false);
         }
     }
 
