@@ -52597,11 +52597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8028315320208643923, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12.000061
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 8028315320208643923, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 12.000092
+      value: 12.000122
       objectReference: {fileID: 0}
     - target: {fileID: 8193370994432698994, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
@@ -54741,6 +54741,152 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &699564808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1808897267}
+    m_Modifications:
+    - target: {fileID: 62464439899955657, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: imageToChange
+      value: 
+      objectReference: {fileID: 699564810}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1495.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 189.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702634732489466518, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_Name
+      value: 2_StationaryPlatformDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702634732489466518, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: activateAfter
+      value: 
+      objectReference: {fileID: 517165575}
+    - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: activateAfter2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: Hey listen! Ceru is using her magic to hold this platform.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: You can rotate the castle without worrying about falling!
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+--- !u!224 &699564809 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3113501395577338851, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+  m_PrefabInstance: {fileID: 699564808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &699564810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2446042985388555547, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+  m_PrefabInstance: {fileID: 699564808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &699564811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3702634732489466518, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
+  m_PrefabInstance: {fileID: 699564808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -122182,6 +122328,8 @@ MonoBehaviour:
   desiredParentName: Level_1
   offEffect: {fileID: 1978892396}
   onEffect: {fileID: 1943596756}
+  firstTimeDialogue: {fileID: 0}
+  hideWhileDialogue: {fileID: 0}
 --- !u!64 &1567474341
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -122987,6 +123135,8 @@ MonoBehaviour:
   desiredParentName: Level_1
   offEffect: {fileID: 520226221}
   onEffect: {fileID: 1227162551}
+  firstTimeDialogue: {fileID: 699564811}
+  hideWhileDialogue: {fileID: 517165575}
 --- !u!64 &1629712321
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -129050,6 +129200,7 @@ RectTransform:
   m_Children:
   - {fileID: 1194017224}
   - {fileID: 1146328272}
+  - {fileID: 699564809}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
