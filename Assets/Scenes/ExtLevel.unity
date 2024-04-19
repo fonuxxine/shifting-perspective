@@ -31199,6 +31199,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 8628541098658219967, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73689820c978f824d9ee75441ac651c6, type: 3}
+    - target: {fileID: 8628541098658219967, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73689820c978f824d9ee75441ac651c6, type: 3}
+    - target: {fileID: 8628541098658219967, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73689820c978f824d9ee75441ac651c6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32121,6 +32133,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1428535334}
     m_Modifications:
+    - target: {fileID: -9132900131629795433, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5d57c0e75d634b458ec18aed74f2738, type: 2}
     - target: {fileID: -9057663505897336449, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -32621,6 +32637,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.014120049
       objectReference: {fileID: 0}
+    - target: {fileID: -2843909369972686622, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a71bd434dadad493598c2f28bca2d698, type: 2}
     - target: {fileID: -2645453787641969951, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0021433
@@ -33241,6 +33261,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.00000028923836
       objectReference: {fileID: 0}
+    - target: {fileID: 3669792126955847883, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18704289ae3494b1ca8727b4cbbd37e6, type: 2}
     - target: {fileID: 4406793041372153869, guid: 822c24d8a3745444091ca7e11bda8583, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9929413
@@ -40525,6 +40549,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270669615}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1273968829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4848317785753614357, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+  m_PrefabInstance: {fileID: 900073306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1276647952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40827,7 +40856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1273968829}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1290483200

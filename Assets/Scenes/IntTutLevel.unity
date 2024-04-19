@@ -17039,7 +17039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1063088748}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &761605221
@@ -23960,11 +23960,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 8628541098658219967, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73689820c978f824d9ee75441ac651c6, type: 3}
+    - target: {fileID: 8628541098658219967, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73689820c978f824d9ee75441ac651c6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+--- !u!1 &1063088748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4848317785753614357, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+  m_PrefabInstance: {fileID: 1063088747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1092633247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5627547866906074834, guid: ca35c9af75a77498eaa5805879af50ef, type: 3}
