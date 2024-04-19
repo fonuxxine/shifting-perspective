@@ -8,7 +8,6 @@ public class StationaryPlatformSetParent : MonoBehaviour
     public GameObject offEffect;
     public GameObject onEffect;
     public GameObject firstTimeDialogue;
-    public GameObject hideWhileDialogue;
 
     private bool _firstTime = true;
 
@@ -23,7 +22,6 @@ public class StationaryPlatformSetParent : MonoBehaviour
 
             if (_firstTime && firstTimeDialogue)
             {
-                hideWhileDialogue.SetActive(false);
                 firstTimeDialogue.SetActive(true);
                 _firstTime = false;
             }
