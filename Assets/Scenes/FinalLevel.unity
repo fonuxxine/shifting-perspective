@@ -7039,7 +7039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
       propertyPath: lines.Array.data[0]
-      value: This is it, I can sense the Adamant Orb up ahead.
+      value: This is it, Ceru can sense the Adamant Orb up ahead.
       objectReference: {fileID: 0}
     - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
       propertyPath: lines.Array.data[1]
