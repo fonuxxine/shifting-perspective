@@ -3,7 +3,7 @@ using UnityEngine;
 public class TimedSceneTransition : MonoBehaviour
 {
 
-    public float delayTime = 1000f;
+    public float delayTime = 1000f; // time in seconds
     public bool skipCredits = true; // true for Main Menu, false for credits
     
     void Start()
