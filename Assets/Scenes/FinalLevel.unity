@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13310361, g: 0.14760509, b: 0.29370838, a: 1}
+  m_IndirectSpecularColor: {r: 0.1331194, g: 0.14761737, b: 0.29371548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 2129505176}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &667718605
@@ -26899,11 +26899,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 8628541098658219967, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73689820c978f824d9ee75441ac651c6, type: 3}
+    - target: {fileID: 8628541098658219967, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73689820c978f824d9ee75441ac651c6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+--- !u!1 &2129505176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4848317785753614357, guid: ccd1d4cbfa730204190c11fb0cd43291, type: 3}
+  m_PrefabInstance: {fileID: 2129505175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2132705697
 GameObject:
   m_ObjectHideFlags: 0
