@@ -4,9 +4,14 @@ public class MainMenuLogic : MonoBehaviour
 {
     public void Update()
     {
-        if (Input.anyKey)
+        if (!Input.anyKey) return;
+        if (!Input.GetButtonDown("Cancel"))
         {
             StartGame();
+        }
+        else
+        {
+            Application.Quit();
         }
     }
 

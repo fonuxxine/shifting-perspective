@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e367b9bdeea5b84085f2600005649fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 372
+  delayTime: 350
   skipCredits: 1
 --- !u!114 &35638397
 MonoBehaviour:

@@ -30933,7 +30933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
       propertyPath: lines.Array.data[1]
-      value: I saw a lever up on the wall, maybe it opens the gate!
+      value: Ceru saw a lever up on the wall, maybe it opens the gate!
       objectReference: {fileID: 0}
     - target: {fileID: 4908547151187057313, guid: 0eff81c18121a1940871fc704ae049f6, type: 3}
       propertyPath: lines.Array.data[2]
@@ -63021,7 +63021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6694188682386495844
 MonoBehaviour:
   m_ObjectHideFlags: 0
